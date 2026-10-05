@@ -986,48 +986,73 @@
   box-shadow: 0 2px 8px rgba(18, 91, 204, 0.4);
 }
 
-/* Framed container mode for Desktop 1440 / Mobile 390 preview */
-body.preview-frame-mode {
-  background-color: #0E1726;
+/* ==========================================================================
+   Responsive Preview Stage & Device Frame System
+   Ensures page content and footer always share the exact same width and boundaries
+   ========================================================================== */
+.pm-app-root {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
+  width: 100%;
 }
 
 .preview-stage {
   width: 100%;
+  flex: 1 0 auto;
   display: flex;
-  justify-content: center;
-  padding: 24px 0 60px 0;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  transition: background-color 0.25s ease;
+}
+
+.preview-stage.isolated-mode {
+  background-color: #0B132B;
+  padding: 32px 16px 64px 16px;
+  align-items: center;
+  min-height: calc(100vh - 56px);
 }
 
 .preview-frame {
-  background: var(--pm-white);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
-  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  overflow: hidden;
-}
-
-body.mode-desktop-1440 .preview-frame {
-  width: 1440px;
-}
-
-body.mode-mobile-390 .preview-frame {
-  width: 390px;
-  border-radius: 32px;
-  border: 10px solid #080E1A;
-}
-
-body.mode-mobile-360 .preview-frame {
-  width: 360px;
-  border-radius: 24px;
-  border: 8px solid #080E1A;
-}
-
-body.mode-responsive-fluid .preview-frame {
   width: 100%;
+  background: var(--pm-white);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  transition: width 0.25s ease, max-width 0.25s ease;
+}
+
+.preview-frame.mode-fluid {
+  width: 100%;
+  max-width: 100%;
   box-shadow: none;
   border: none;
   border-radius: 0;
+}
+
+.preview-frame.mode-1440 {
+  width: 1440px;
+  max-width: 1440px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.preview-frame.mode-390 {
+  width: 390px;
+  max-width: 390px;
+  border-radius: 36px;
+  border: 10px solid #080E1A;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.preview-frame.mode-360 {
+  width: 360px;
+  max-width: 360px;
+  border-radius: 28px;
+  border: 8px solid #080E1A;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
 }
