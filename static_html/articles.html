@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Educational Articles & News — Padhai Mantra</title>
+  <meta name="description" content="Read educational insights, SEE exam guides, policy updates, and study tips from the Padhai Mantra academic team.">
+  <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
+
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body class="preview-frame-mode mode-desktop-1440">
+
+  <!-- Viewport Switcher Toolbar -->
+  <div class="pm-preview-toolbar" role="region" aria-label="Design System Viewport Switcher">
+    <div class="pm-toolbar-title">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #60A5FA;"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+      <span>Padhai Mantra UI Redesign — Articles</span>
+    </div>
+    <div class="pm-toolbar-controls">
+      <button type="button" class="pm-mode-btn active" data-mode="desktop-1440">Desktop 1440px</button>
+      <button type="button" class="pm-mode-btn" data-mode="mobile-390">Mobile 390px</button>
+      <button type="button" class="pm-mode-btn" data-mode="mobile-360">Android 360px</button>
+      <button type="button" class="pm-mode-btn" data-mode="responsive-fluid">Fluid Responsive</button>
+    </div>
+  </div>
+
+  <div class="preview-stage">
+    <div class="preview-frame">
+
+      <!-- Header -->
+      <header class="pm-header">
+        <div class="pm-container">
+          <div class="pm-header-inner">
+            <a href="index.html" class="pm-brand">
+              <img src="assets/logo.png" alt="Padhai Mantra" style="height: 44px; width: auto;">
+            </a>
+            <nav class="pm-nav-desktop">
+              <a href="index.html" class="pm-nav-link">Home</a>
+              <a href="courses.html" class="pm-nav-link">Courses</a>
+              <a href="live-classes.html" class="pm-nav-link">Live Classes</a>
+              <a href="mock-tests.html" class="pm-nav-link">Mock Tests</a>
+              <a href="scholarships.html" class="pm-nav-link">Scholarships</a>
+              <a href="about-us.html" class="pm-nav-link">About Us</a>
+            </nav>
+            <div class="pm-header-actions">
+              <a href="login.html" class="pm-btn pm-btn-outline" style="padding: 9px 18px; min-height: 40px;">Log in</a>
+              <a href="register.html" class="pm-btn pm-btn-primary" style="padding: 9px 20px; min-height: 40px;">Sign up</a>
+              <button type="button" class="pm-mobile-toggle" id="mobileMenuToggle" aria-label="Open mobile menu">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Mobile Drawer -->
+      <div class="pm-drawer-backdrop" id="drawerBackdrop"></div>
+      <aside class="pm-drawer" id="mobileDrawer">
+        <div class="pm-drawer-header">
+          <a href="index.html" class="pm-brand"><img src="assets/logo.png" alt="Padhai Mantra" style="height: 32px; width: auto;"></a>
+          <button type="button" class="pm-modal-close" id="drawerClose" style="position: static; width: 36px; height: 36px;">✕</button>
+        </div>
+        <div class="pm-drawer-body">
+          <nav class="pm-drawer-nav">
+            <a href="index.html"><span>Home</span> <span>→</span></a>
+            <a href="courses.html"><span>Courses</span> <span>→</span></a>
+            <a href="live-classes.html"><span>Live Classes</span> <span>→</span></a>
+            <a href="mock-tests.html"><span>Mock Tests</span> <span>→</span></a>
+            <a href="scholarships.html"><span>Scholarships</span> <span>→</span></a>
+            <a href="about-us.html"><span>About Us</span> <span>→</span></a>
+            <a href="articles.html" class="active"><span>Articles</span> <span>→</span></a>
+            <a href="contact.html"><span>Contact Us</span> <span>→</span></a>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- Page Header (Consistent naming 'Articles' per brief p. 32) -->
+      <section class="pm-page-header">
+        <div class="pm-container">
+          <div class="pm-breadcrumb">
+            <a href="index.html">Home</a>
+            <span class="pm-breadcrumb-sep">›</span>
+            <span>Articles</span>
+          </div>
+          <h1 class="pm-page-title">Articles & Exam Notices</h1>
+          <p class="pm-page-desc">
+            Stay informed with verified educational news, curriculum changes, SEE result analysis, and study strategies from Nepal's trusted mentors.
+          </p>
+        </div>
+      </section>
+
+      <!-- Main Articles Section -->
+      <section class="pm-section pm-section-soft">
+        <div class="pm-container">
+          
+          <!-- Category Filter Bar -->
+          <div class="pm-filter-bar">
+            <div class="pm-filter-chips">
+              <a href="articles.html" class="pm-chip active">All Articles</a>
+              <a href="articles.html#exam" class="pm-chip">Exam Notices</a>
+              <a href="articles.html#tips" class="pm-chip">Study Tips</a>
+              <a href="articles.html#policy" class="pm-chip">Education Policy</a>
+            </div>
+
+            <div class="pm-search-box">
+              <div class="pm-search-input-wrap">
+                <svg class="pm-search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                <input type="text" placeholder="Search articles..." aria-label="Search articles">
+              </div>
+            </div>
+          </div>
+
+          <!-- Featured Article at Top (Added per brief page 32) -->
+          <div style="margin-bottom: var(--sp-8);">
+            <article style="background: var(--pm-white); border: 1px solid var(--pm-slate-200); border-radius: var(--radius-xl); overflow: hidden; display: grid; grid-template-columns: 1.2fr 0.8fr; box-shadow: var(--shadow-card);">
+              <div style="background: #0B2545; min-height: 280px; display: flex; align-items: center; justify-content: center; position: relative;">
+                <span class="pm-badge pm-badge-amber" style="position: absolute; top: 16px; left: 16px;">Featured Guide</span>
+                <div style="padding: 24px; text-align: center; color: #FFFFFF;">
+                  <div style="font-size: 2.25rem; font-weight: 800; color: #FEF08A; margin-bottom: 4px;">SEE RESULT 2082</div>
+                  <div style="font-size: 0.875rem; color: #CBD5E1;">National Examination Board Official Guidelines</div>
+                </div>
+              </div>
+              <div style="padding: var(--sp-6); display: flex; flex-direction: column; justify-content: center;">
+                <div style="font-size: 0.75rem; color: var(--pm-slate-500); margin-bottom: 8px;">
+                  <span>By Admin</span> • <span>Ashad 2082</span> • <span>4 min read</span>
+                </div>
+                <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 10px; line-height: 1.3;">
+                  <a href="article-detail.html" style="color: var(--pm-slate-900);">How to Check SEE Result: Complete SMS, IVR & Website Portal Guide</a>
+                </h2>
+                <p style="font-size: 0.9375rem; color: var(--pm-slate-600); line-height: 1.6; margin-bottom: var(--sp-4);">
+                  The National Examination Board has officially published the verification platforms for SEE 2082. Here is the verified step-by-step breakdown of how students can check grades with mark sheets.
+                </p>
+                <a href="article-detail.html" class="pm-btn pm-btn-primary" style="align-self: flex-start; padding: 10px 22px;">
+                  Read Full Article →
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <!-- 3-Column Equal Height Article Cards (Clamped titles & excerpts per brief p. 32) -->
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-5);">
+            
+            <!-- Article 1: IOE Madhesh -->
+            <article class="pm-course-card">
+              <div class="pm-course-thumb">
+                <div style="width: 100%; height: 100%; background: #0B2545; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700;">
+                  IOE Madhesh Campus
+                </div>
+              </div>
+              <div class="pm-course-content">
+                <div style="font-size: 0.75rem; color: var(--pm-slate-500); margin-bottom: 6px;">News • By Admin • Ashad 2083</div>
+                <h3 class="pm-course-title">Tribhuvan University Institute of Engineering (IOE) Campus in Madhesh</h3>
+                <p class="pm-course-desc">The government has initiated construction plans for an IOE constituent campus in Madhesh Province.</p>
+                <div class="pm-course-footer">
+                  <span style="font-size: 0.75rem; color: var(--pm-slate-500);">3 min read</span>
+                  <a href="article-detail.html" class="pm-btn-text" style="padding: 0;">Read More →</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Article 2: Paddy Day -->
+            <article class="pm-course-card">
+              <div class="pm-course-thumb">
+                <div style="width: 100%; height: 100%; background: #065F46; display: flex; align-items: center; justify-content: center; color: #A7F3D0; font-weight: 700;">
+                  राष्ट्रिय धान दिवस
+                </div>
+              </div>
+              <div class="pm-course-content">
+                <div style="font-size: 0.75rem; color: var(--pm-slate-500); margin-bottom: 6px;">Notice • By Admin • Ashad 15</div>
+                <h3 class="pm-course-title">Celebrating National Paddy Day & Ashad 15: Honoring Farmers</h3>
+                <p class="pm-course-desc">Celebrating the heritage of Nepali agriculture and culture with holiday academic schedules.</p>
+                <div class="pm-course-footer">
+                  <span style="font-size: 0.75rem; color: var(--pm-slate-500);">2 min read</span>
+                  <a href="article-detail.html" class="pm-btn-text" style="padding: 0;">Read More →</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Article 3: VAT on Education -->
+            <article class="pm-course-card">
+              <div class="pm-course-thumb">
+                <div style="width: 100%; height: 100%; background: #1E293B; display: flex; align-items: center; justify-content: center; color: #CBD5E1; font-weight: 700;">
+                  Education Policy
+                </div>
+              </div>
+              <div class="pm-course-content">
+                <div style="font-size: 0.75rem; color: var(--pm-slate-500); margin-bottom: 6px;">Policy • By Admin • Baisakh 2083</div>
+                <h3 class="pm-course-title">VAT on Educational Institutions: A Step Toward Stronger Sector?</h3>
+                <p class="pm-course-desc">The budget announcement introduces several fiscal reforms aimed at institutional education.</p>
+                <div class="pm-course-footer">
+                  <span style="font-size: 0.75rem; color: var(--pm-slate-500);">4 min read</span>
+                  <a href="article-detail.html" class="pm-btn-text" style="padding: 0;">Read More →</a>
+                </div>
+              </div>
+            </article>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="pm-footer">
+        <div class="pm-container">
+          <div class="pm-footer-bottom" style="border-top: none; padding-top: 0;">
+            <div>© 2026 Padhai Mantra Pvt. Ltd. All rights reserved. Kathmandu, Nepal.</div>
+            <div><a href="index.html" style="color: #94A3B8;">← Back to Home</a></div>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

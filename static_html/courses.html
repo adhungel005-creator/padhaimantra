@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courses for SEE, Class 11 & 12 — Padhai Mantra</title>
+  <meta name="description" content="Explore structured batches for SEE Class 10 and NEB Class 11–12 with daily live classes, recorded lectures, and topper notes.">
+  <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
+
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body class="preview-frame-mode mode-desktop-1440">
+
+  <!-- Viewport Switcher Toolbar -->
+  <div class="pm-preview-toolbar" role="region" aria-label="Design System Viewport Switcher">
+    <div class="pm-toolbar-title">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #60A5FA;"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" x2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+      <span>Padhai Mantra UI Redesign — Courses Listing</span>
+    </div>
+    <div class="pm-toolbar-controls">
+      <button type="button" class="pm-mode-btn active" data-mode="desktop-1440">Desktop 1440px</button>
+      <button type="button" class="pm-mode-btn" data-mode="mobile-390">Mobile 390px</button>
+      <button type="button" class="pm-mode-btn" data-mode="mobile-360">Android 360px</button>
+      <button type="button" class="pm-mode-btn" data-mode="responsive-fluid">Fluid Responsive</button>
+    </div>
+  </div>
+
+  <div class="preview-stage">
+    <div class="preview-frame">
+
+      <!-- Header -->
+      <header class="pm-header">
+        <div class="pm-container">
+          <div class="pm-header-inner">
+            <a href="index.html" class="pm-brand">
+              <img src="assets/logo.png" alt="Padhai Mantra" style="height: 44px; width: auto;">
+            </a>
+            <nav class="pm-nav-desktop" aria-label="Primary Navigation">
+              <a href="index.html" class="pm-nav-link">Home</a>
+              <a href="courses.html" class="pm-nav-link active">Courses</a>
+              <a href="live-classes.html" class="pm-nav-link">Live Classes</a>
+              <a href="mock-tests.html" class="pm-nav-link">Mock Tests</a>
+              <a href="scholarships.html" class="pm-nav-link">Scholarships</a>
+              <a href="about-us.html" class="pm-nav-link">About Us</a>
+            </nav>
+            <div class="pm-header-actions">
+              <a href="login.html" class="pm-btn pm-btn-outline" style="padding: 9px 18px; min-height: 40px;">Log in</a>
+              <a href="register.html" class="pm-btn pm-btn-primary" style="padding: 9px 20px; min-height: 40px;">Sign up</a>
+              <button type="button" class="pm-mobile-toggle" id="mobileMenuToggle" aria-label="Open mobile menu">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Mobile Drawer -->
+      <div class="pm-drawer-backdrop" id="drawerBackdrop"></div>
+      <aside class="pm-drawer" id="mobileDrawer">
+        <div class="pm-drawer-header">
+          <a href="index.html" class="pm-brand"><img src="assets/logo.png" alt="Padhai Mantra" style="height: 32px; width: auto;"></a>
+          <button type="button" class="pm-modal-close" id="drawerClose" style="position: static; width: 36px; height: 36px;">✕</button>
+        </div>
+        <div class="pm-drawer-body">
+          <nav class="pm-drawer-nav">
+            <a href="index.html"><span>Home</span> <span>→</span></a>
+            <a href="courses.html" class="active"><span>Courses</span> <span>→</span></a>
+            <a href="live-classes.html"><span>Live Classes</span> <span>→</span></a>
+            <a href="mock-tests.html"><span>Mock Tests</span> <span>→</span></a>
+            <a href="scholarships.html"><span>Scholarships</span> <span>→</span></a>
+            <a href="about-us.html"><span>About Us</span> <span>→</span></a>
+            <a href="articles.html"><span>Articles</span> <span>→</span></a>
+            <a href="contact.html"><span>Contact Us</span> <span>→</span></a>
+          </nav>
+        </div>
+        <div class="pm-drawer-footer">
+          <a href="register.html" class="pm-btn pm-btn-primary" style="width: 100%;">Sign up</a>
+          <a href="login.html" class="pm-btn pm-btn-outline" style="width: 100%;">Log in</a>
+        </div>
+      </aside>
+
+      <!-- Page Header (Solves missing H1 & intro from brief page 16) -->
+      <section class="pm-page-header">
+        <div class="pm-container">
+          <div class="pm-breadcrumb">
+            <a href="index.html">Home</a>
+            <span class="pm-breadcrumb-sep">›</span>
+            <span>Courses</span>
+          </div>
+          <h1 class="pm-page-title">Courses for SEE, Class 11 & 12</h1>
+          <p class="pm-page-desc">
+            Explore structured batches taught by expert educators with daily live interactive classes, Discord doubt solving, and topper revision notes.
+          </p>
+        </div>
+      </section>
+
+      <!-- Main Course Grid Section -->
+      <section class="pm-section pm-section-soft">
+        <div class="pm-container">
+          
+          <!-- Unified Filter Bar (Solves split chips & cut-off mobile placeholder) -->
+          <div class="pm-filter-bar">
+            <div class="pm-filter-chips">
+              <a href="courses.html" class="pm-chip active">All Programs</a>
+              <a href="courses-category.html" class="pm-chip">Class 10 (SEE)</a>
+              <a href="courses.html#class-11" class="pm-chip">Class 11</a>
+              <a href="courses.html#class-12" class="pm-chip">Class 12</a>
+            </div>
+
+            <div class="pm-search-box">
+              <div class="pm-search-input-wrap">
+                <svg class="pm-search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                <input type="text" placeholder="Search courses..." aria-label="Search courses">
+              </div>
+              <button type="button" class="pm-btn pm-btn-secondary" style="padding: 9px 16px; min-height: 42px;">Search</button>
+            </div>
+          </div>
+
+          <!-- 3-Column Equal Height Course Cards (Real brief data) -->
+          <div class="pm-courses-grid">
+            
+            <!-- Course 1 -->
+            <article class="pm-course-card">
+              <div class="pm-course-thumb">
+                <div class="pm-course-badge-top">
+                  <span class="pm-badge pm-badge-amber">Apex Batch 2083</span>
+                </div>
+                <img src="assets/apex-batch.jpg" alt="SEE Class 10: Apex Batch 2083" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <div class="pm-course-content">
+                <div class="pm-course-category">Class 10 (SEE)</div>
+                <h2 class="pm-course-title">
+                  <a href="course-detail.html" style="color: inherit;">SEE Class 10: Apex Batch 2083</a>
+                </h2>
+                <p class="pm-course-desc">Prepare for SEE with complete syllabus coverage, mock exams, and mentor guidance.</p>
+                <div class="pm-course-features">
+                  <span class="pm-badge pm-badge-primary">Daily Live</span>
+                  <span class="pm-badge pm-badge-primary">Discord Community</span>
+                  <span class="pm-badge pm-badge-primary">Topper Masterclass</span>
+                </div>
+                <div class="pm-course-footer">
+                  <div class="pm-course-price-lockup">
+                    <span class="pm-course-price-orig">Rs. 2,499/-</span>
+                    <span class="pm-course-price-curr">Rs. 1,999/-</span>
+                  </div>
+                  <a href="course-detail.html" class="pm-btn pm-btn-primary" style="padding: 9px 18px; min-height: 42px; font-size: 0.875rem;">View Details</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Course 2 -->
+            <article class="pm-course-card">
+              <div class="pm-course-thumb">
+                <div class="pm-course-badge-top">
+                  <span class="pm-badge pm-badge-amber">Ignite 2083</span>
+                </div>
+                <svg width="100%" height="100%" viewBox="0 0 360 202" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="360" height="202" fill="#1E293B"/>
+                  <circle cx="280" cy="100" r="70" fill="#D97706" opacity="0.3"/>
+                  <text x="24" y="60" font-family="Poppins, sans-serif" font-weight="800" font-size="18" fill="#F87171">CLASS 11 (SCIENCE):</text>
+                  <text x="24" y="90" font-family="Poppins, sans-serif" font-weight="800" font-size="24" fill="#FFFFFF">IGNITE 2083</text>
+                  <text x="24" y="130" font-family="Inter, sans-serif" font-size="12" fill="#CBD5E1">Physics, Chemistry, Maths & Biology Focus</text>
+                </svg>
+              </div>
+              <div class="pm-course-content">
+                <div class="pm-course-category">NEB Class 11</div>
+                <h2 class="pm-course-title">
+                  <a href="course-detail.html" style="color: inherit;">Class 11 (Science): Ignite 2083</a>
+                </h2>
+                <p class="pm-course-desc">Start your Class 11 journey with confidence through deep conceptual lectures and weekly tests.</p>
+                <div class="pm-course-features">
+                  <span class="pm-badge pm-badge-primary">Interactive Live</span>
+                  <span class="pm-badge pm-badge-primary">Weekly MCQ</span>
+                  <span class="pm-badge pm-badge-primary">Recorded Backups</span>
+                </div>
+                <div class="pm-course-footer">
+                  <div class="pm-course-price-lockup">
+                    <span class="pm-course-price-orig">Rs. 4,499/-</span>
+                    <span class="pm-course-price-curr">Rs. 2,499/-</span>
+                  </div>
+                  <a href="course-detail.html" class="pm-btn pm-btn-primary" style="padding: 9px 18px; min-height: 42px; font-size: 0.875rem;">View Details</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Course 3 (Clean "New" badge instead of negative "Out of 0 reviews") -->
+            <article class="pm-course-card">
+              <div class="pm-course-thumb">
+                <div class="pm-course-badge-top">
+                  <span class="pm-badge pm-badge-green">New • Free Demo</span>
+                </div>
+                <svg width="100%" height="100%" viewBox="0 0 360 202" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="360" height="202" fill="#064E3B"/>
+                  <circle cx="280" cy="100" r="70" fill="#10B981" opacity="0.3"/>
+                  <text x="24" y="60" font-family="Poppins, sans-serif" font-weight="800" font-size="18" fill="#6EE7B7">CLASS 12 (SCIENCE):</text>
+                  <text x="24" y="90" font-family="Poppins, sans-serif" font-weight="800" font-size="24" fill="#FFFFFF">PROJECT 4.0</text>
+                  <text x="24" y="130" font-family="Inter, sans-serif" font-size="12" fill="#CBD5E1">NEB Board Revision & Free Demo Access</text>
+                </svg>
+              </div>
+              <div class="pm-course-content">
+                <div class="pm-course-category">NEB Class 12</div>
+                <h2 class="pm-course-title">
+                  <a href="course-detail.html" style="color: inherit;">Class 12 (Science) 2083: Project 4.0</a>
+                </h2>
+                <p class="pm-course-desc">Full-year board exam preparation course with complete question bank solutions and revision notes.</p>
+                <div class="pm-course-features">
+                  <span class="pm-badge pm-badge-green">Free Demo Access</span>
+                  <span class="pm-badge pm-badge-primary">Exam Focus</span>
+                </div>
+                <div class="pm-course-footer">
+                  <div class="pm-course-price-lockup">
+                    <span class="pm-course-price-orig" style="visibility: hidden;">—</span>
+                    <span class="pm-course-price-curr free">Free</span>
+                  </div>
+                  <a href="course-detail.html" class="pm-btn pm-btn-secondary" style="padding: 9px 18px; min-height: 42px; font-size: 0.875rem;">Enroll Free</a>
+                </div>
+              </div>
+            </article>
+
+          </div>
+
+          <!-- Note: Single page pagination intentionally hidden per brief rule -->
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="pm-footer">
+        <div class="pm-container">
+          <div class="pm-footer-grid">
+            <div class="pm-footer-brand">
+              <a href="index.html" class="pm-brand">
+                <img src="assets/logo.png" alt="Padhai Mantra" style="height: 40px; width: auto; filter: brightness(0) invert(1);">
+              </a>
+              <p>Padhai Mantra is Nepal's dedicated ed-tech brand for SEE (Class 10) and NEB Class 11–12 students. Empowering over 30,000 learners.</p>
+            </div>
+            <div class="pm-footer-col">
+              <h4>Quick Links</h4>
+              <ul class="pm-footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="live-classes.html">Live Classes</a></li>
+                <li><a href="mock-tests.html">Mock Tests</a></li>
+                <li><a href="scholarships.html">Scholarships</a></li>
+              </ul>
+            </div>
+            <div class="pm-footer-col">
+              <h4>About & Legal</h4>
+              <ul class="pm-footer-links">
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="articles.html">Articles</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="terms.html">Terms & Conditions</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+              </ul>
+            </div>
+            <div class="pm-footer-col">
+              <h4>Contact Us</h4>
+              <ul class="pm-footer-contact-list">
+                <li class="pm-footer-contact-item"><span>📍</span><span>Kathmandu, Nepal</span></li>
+                <li class="pm-footer-contact-item"><span>📞</span><span>+977-9707799339 / +977-9705849944</span></li>
+                <li class="pm-footer-contact-item"><span>✉️</span><a href="mailto:hamropadhaimantra@gmail.com" style="color: #CBD5E1; word-break: break-all;">hamropadhaimantra@gmail.com</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="pm-footer-bottom">
+            <div>© 2026 Padhai Mantra Pvt. Ltd. All rights reserved. Kathmandu, Nepal.</div>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Padhai Mantra — Learn Smarter, Score Higher (SEE Class 10 & NEB 11–12)</title>
+  <meta name="description" content="Nepal's premier learning platform for SEE (Class 10) and NEB Class 11–12 students. Master concepts with daily live classes, structured mock tests, and topper guidance.">
+
+  <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
+
+  <!-- Core Design System & Home Styles -->
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body class="preview-frame-mode mode-desktop-1440">
+
+  <!-- ==========================================================================
+       REVIEWER PREVIEW TOOLBAR
+       Allows client / evaluators to inspect 1440px Desktop vs 390px Mobile vs 360px
+       ========================================================================== -->
+  <div class="pm-preview-toolbar" role="region" aria-label="Design System Viewport Switcher">
+    <div class="pm-toolbar-title">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #60A5FA;"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+      <span>Padhai Mantra UI Redesign — Home Concept</span>
+    </div>
+    <div class="pm-toolbar-controls">
+      <span style="color: #94A3B8; font-size: 0.75rem; margin-right: 4px;">Viewport:</span>
+      <button type="button" class="pm-mode-btn active" data-mode="desktop-1440">Desktop 1440px</button>
+      <button type="button" class="pm-mode-btn" data-mode="mobile-390">Mobile 390px</button>
+      <button type="button" class="pm-mode-btn" data-mode="mobile-360">Android 360px</button>
+      <button type="button" class="pm-mode-btn" data-mode="responsive-fluid">Fluid Responsive</button>
+      <button type="button" class="pm-mode-btn" id="viewPromoBtn" style="border-color: #F59E0B; color: #F59E0B;">Preview Promo Popup</button>
+    </div>
+  </div>
+
+  <!-- Preview Container Frame -->
+  <div class="preview-stage">
+    <div class="preview-frame" id="previewFrame">
+
+      <!-- ==========================================================================
+           GLOBAL HEADER (Single-row mobile fix + desktop alignment)
+           ========================================================================== -->
+      <header class="pm-header">
+        <div class="pm-container">
+          <div class="pm-header-inner">
+            
+            <!-- Authentic Brand Logo -->
+            <a href="index.html" class="pm-brand" aria-label="Padhai Mantra Homepage">
+              <img src="assets/logo.png" alt="Padhai Mantra - Mantra to your dream education" style="height: 44px; width: auto; object-fit: contain;">
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="pm-nav-desktop" aria-label="Primary Navigation">
+              <a href="index.html" class="pm-nav-link active">Home</a>
+              <a href="courses.html" class="pm-nav-link">Courses</a>
+              <a href="live-classes.html" class="pm-nav-link">Live Classes</a>
+              <a href="mock-tests.html" class="pm-nav-link">Mock Tests</a>
+              <a href="scholarships.html" class="pm-nav-link">Scholarships</a>
+              <a href="about-us.html" class="pm-nav-link">About Us</a>
+            </nav>
+
+            <!-- Actions (Desktop Login / Sign up) -->
+            <div class="pm-header-actions">
+              <a href="login.html" class="pm-btn pm-btn-outline" style="padding: 9px 18px; min-height: 40px;">Log in</a>
+              <a href="register.html" class="pm-btn pm-btn-primary" style="padding: 9px 20px; min-height: 40px;">Sign up</a>
+              
+              <!-- Mobile Hamburger Trigger (Accessible 44px min target) -->
+              <button type="button" class="pm-mobile-toggle" id="mobileMenuToggle" aria-label="Open mobile navigation menu" aria-expanded="false">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="3" y1="12" x2="21" y2="12"></line>
+                  <line x1="3" y1="6" x2="21" y2="6"></line>
+                  <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </header>
+
+      <!-- ==========================================================================
+           MOBILE NAVIGATION DRAWER (Solves 2-row cluttered mobile header)
+           ========================================================================== -->
+      <div class="pm-drawer-backdrop" id="drawerBackdrop"></div>
+      <aside class="pm-drawer" id="mobileDrawer" aria-label="Mobile Menu">
+        <div class="pm-drawer-header">
+          <a href="index.html" class="pm-brand" style="text-decoration: none;">
+            <img src="assets/logo.png" alt="Padhai Mantra" style="height: 32px; width: auto; object-fit: contain;">
+          </a>
+          <button type="button" class="pm-modal-close" id="drawerClose" aria-label="Close mobile menu" style="position: static; width: 36px; height: 36px;">✕</button>
+        </div>
+
+        <div class="pm-drawer-body">
+          <nav class="pm-drawer-nav">
+            <a href="index.html" class="active"><span>Home</span> <span>→</span></a>
+            <a href="courses.html"><span>Courses</span> <span>→</span></a>
+            <a href="live-classes.html"><span>Live Classes</span> <span>→</span></a>
+            <a href="mock-tests.html"><span>Mock Tests</span> <span>→</span></a>
+            <a href="scholarships.html"><span>Scholarships</span> <span>→</span></a>
+            <a href="about-us.html"><span>About Us</span> <span>→</span></a>
+            <a href="articles.html"><span>Articles</span> <span>→</span></a>
+            <a href="contact.html"><span>Contact Us</span> <span>→</span></a>
+          </nav>
+        </div>
+
+        <div class="pm-drawer-footer">
+          <a href="register.html" class="pm-btn pm-btn-primary" style="width: 100%;">Sign up</a>
+          <a href="login.html" class="pm-btn pm-btn-outline" style="width: 100%;">Log in</a>
+          <div style="font-size: 0.75rem; color: var(--pm-slate-500); text-align: center; margin-top: 6px;">
+            Support: +977-9705849944
+          </div>
+        </div>
+      </aside>
+
+      <main>
+        <!-- ==========================================================================
+             SECTION 1: UNIFIED HERO
+             Merges competing heroes into one clear value prop + CTAs
+             ========================================================================== -->
+        <section class="pm-hero" id="home">
+          <div class="pm-container">
+            <div class="pm-hero-grid">
+              
+              <!-- Left Column: Value Prop, Headline, CTAs, Social Proof -->
+              <div class="pm-hero-content">
+                <div class="pm-hero-pill">
+                  <span class="pm-badge-amber" style="padding: 2px 8px; font-size: 0.7rem; border-radius: 4px;">SEE & NEB</span>
+                  <span>Batch 2083 Admissions Open</span>
+                </div>
+
+                <!-- Single H1 per page -->
+                <h1>Learn Smarter, Score Higher With <span class="highlight-text">Padhai Mantra</span></h1>
+
+                <!-- Real Supporting Copy from Brief -->
+                <p class="pm-hero-subtitle">
+                  Build strong concepts for SEE Class 10 and prepare confidently for Class 11 & 12 with Padhai Mantra Course Programs. Learn from expert teachers, practice with structured mock tests, and boost your performance with smart, exam-focused guidance.
+                </p>
+
+                <!-- One Primary CTA + One Secondary CTA -->
+                <div class="pm-hero-actions">
+                  <a href="courses.html" class="pm-btn pm-btn-primary">
+                    <span>Get Started</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </a>
+                  <a href="mock-tests.html" class="pm-btn pm-btn-secondary">
+                    <span>Try a Test</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                  </a>
+                </div>
+
+                <!-- Real Social Proof Bar from Brief -->
+                <div class="pm-social-proof">
+                  <div class="pm-avatar-group">
+                    <div class="pm-avatar-item" style="background:#DBEAFE; color:#125BCC;">SR</div>
+                    <div class="pm-avatar-item" style="background:#FEF3C7; color:#B45309;">IM</div>
+                    <div class="pm-avatar-item" style="background:#D1FAE5; color:#065F46;">AS</div>
+                    <div class="pm-avatar-item" style="background:#FEE2E2; color:#991B1B;">DS</div>
+                  </div>
+                  <div class="pm-proof-text">
+                    <strong>33K+ Active Users!</strong><br>
+                    <span>Over 190K+ students on YouTube & live batches</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right Column: Visual Frame with Student & Dual Floating Badges -->
+              <div class="pm-hero-media">
+                <div class="pm-hero-card-frame">
+                  
+                  <!-- Top-Right Floating YouTube Badge -->
+                  <div class="pm-hero-floating-tag">
+                    <span style="color: #FF0000; font-size: 1rem;">▶</span>
+                    <div>
+                      <div style="font-size: 0.75rem; font-weight: 700; color: #FFFFFF; line-height: 1.1;">190K+ Community</div>
+                      <div style="font-size: 0.625rem; color: #94A3B8;">On YouTube</div>
+                    </div>
+                  </div>
+
+                  <div class="pm-hero-image-wrap">
+                    <img src="assets/student-hero.png" alt="Padhai Mantra SEE and NEB Students" style="width: 100%; height: 100%; object-fit: cover;">
+                  </div>
+
+                  <!-- Bottom-Left Floating Student Stat Pill -->
+                  <div class="pm-hero-floating-stat">
+                    <div class="pm-floating-icon">★</div>
+                    <div>
+                      <div style="font-size: 0.8125rem; font-weight: 800; color: var(--pm-slate-900); line-height: 1.1;">4.0 GPA Achievers</div>
+                      <div style="font-size: 0.71875rem; color: var(--pm-slate-500); margin-top: 2px;">SEE & NEB Topper Mentorship</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================================================
+             SECTION 2: SECONDARY PROMOTIONAL BANNER STRIP
+             Preserves the promotional announcements without pushing the hero down
+             ========================================================================== -->
+        <section class="pm-promo-strip" aria-label="Current Announcements">
+          <div class="pm-container">
+            <div class="pm-promo-inner">
+              <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+                <span class="pm-promo-badge">
+                  <span style="width:6px; height:6px; background:#fff; border-radius:50%; display:inline-block;"></span>
+                  Announcement
+                </span>
+                <span class="pm-promo-text">
+                  <strong>SEE 2082 Graduate?</strong> Ignite Class 11 (Science) Batch is now open. Free demo lectures available for Project 4.0.
+                </span>
+              </div>
+              <a href="#courses" class="pm-promo-cta">
+                Grab Your Seats Now →
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================================================
+             SECTION 3: COMPACT STATISTICS
+             Solves the 300px empty tall cards on mobile (4 across desktop, 2x2 mobile)
+             ========================================================================== -->
+        <section class="pm-stats-section" aria-label="Platform Statistics">
+          <div class="pm-container">
+            <div class="pm-stat-grid">
+              
+              <!-- Stat 1 (Real numbers from brief page 11) -->
+              <div class="pm-stat-card">
+                <div style="font-size: 1.25rem; margin-bottom: 4px;">👥</div>
+                <div class="stat-number">33 K+</div>
+                <div class="stat-label">Daily Active Students</div>
+              </div>
+
+              <!-- Stat 2 -->
+              <div class="pm-stat-card">
+                <div style="font-size: 1.25rem; margin-bottom: 4px;">📝</div>
+                <div class="stat-number">8+</div>
+                <div class="stat-label">Mock Tests</div>
+              </div>
+
+              <!-- Stat 3 -->
+              <div class="pm-stat-card">
+                <div style="font-size: 1.25rem; margin-bottom: 4px;">🎥</div>
+                <div class="stat-number">230+</div>
+                <div class="stat-label">Video Lectures</div>
+              </div>
+
+              <!-- Stat 4 -->
+              <div class="pm-stat-card">
+                <div style="font-size: 1.25rem; margin-bottom: 4px;">📈</div>
+                <div class="stat-number">80%</div>
+                <div class="stat-label">Improvement Rate</div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================================================
+             SECTION 4: COURSE & BATCH DISCOVERY
+             Equal-height cards with 16:9 thumbnails and pinned bottom CTAs
+             ========================================================================== -->
+        <section class="pm-section pm-courses-section" id="courses">
+          <div class="pm-container">
+            <div class="pm-section-header">
+              <span class="pm-eyebrow">Academic Programs</span>
+              <h2>Featured Batches for SEE & NEB</h2>
+              <p>Join focused batches taught by expert educators with daily live classes, Discord study groups, and topper notes.</p>
+            </div>
+
+            <div class="pm-courses-grid">
+              
+              <!-- Course Card 1: SEE Class 10 (Real content from screenshot page 16) -->
+              <article class="pm-course-card">
+                <div class="pm-course-thumb">
+                  <div class="pm-course-badge-top">
+                    <span class="pm-badge pm-badge-amber">Apex Batch 2083</span>
+                  </div>
+                  <img src="assets/apex-batch.jpg" alt="SEE Class 10: Apex Batch 2083" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="pm-course-content">
+                  <div class="pm-course-category">Class 10 (SEE)</div>
+                  <h3 class="pm-course-title">SEE Class 10: Apex Batch 2083</h3>
+                  <p class="pm-course-desc">Comprehensive preparation for SEE with full syllabus coverage, mock tests, and mentor guidance.</p>
+                  
+                  <div class="pm-course-features">
+                    <span class="pm-badge pm-badge-primary">Daily Live</span>
+                    <span class="pm-badge pm-badge-primary">Discord Community</span>
+                    <span class="pm-badge pm-badge-primary">Topper Masterclass</span>
+                  </div>
+
+                  <div class="pm-course-footer">
+                    <div class="pm-course-price-lockup">
+                      <span class="pm-course-price-orig">Rs. 2,499/-</span>
+                      <span class="pm-course-price-curr">Rs. 1,999/-</span>
+                    </div>
+                    <a href="course-detail.html" class="pm-btn pm-btn-primary" style="padding: 8px 16px; min-height: 40px; font-size: 0.875rem;">Enroll Now</a>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Course Card 2: Class 11 Science (Real content from screenshot page 16) -->
+              <article class="pm-course-card">
+                <div class="pm-course-thumb">
+                  <div class="pm-course-badge-top">
+                    <span class="pm-badge pm-badge-amber">Ignite 2083</span>
+                  </div>
+                  <svg width="100%" height="100%" viewBox="0 0 360 202" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="360" height="202" fill="#1E293B"/>
+                    <circle cx="280" cy="100" r="70" fill="#D97706" opacity="0.3"/>
+                    <text x="24" y="60" font-family="Poppins, sans-serif" font-weight="800" font-size="18" fill="#F87171">CLASS 11 (SCIENCE):</text>
+                    <text x="24" y="90" font-family="Poppins, sans-serif" font-weight="800" font-size="24" fill="#FFFFFF">IGNITE 2083</text>
+                    <text x="24" y="130" font-family="Inter, sans-serif" font-size="12" fill="#CBD5E1">Physics, Chemistry, Maths & Biology Focus</text>
+                  </svg>
+                </div>
+                <div class="pm-course-content">
+                  <div class="pm-course-category">NEB Class 11</div>
+                  <h3 class="pm-course-title">Class 11 (Science): Ignite 2083</h3>
+                  <p class="pm-course-desc">Start your Class 11 journey with confidence through deep conceptual lectures and weekly tests.</p>
+                  
+                  <div class="pm-course-features">
+                    <span class="pm-badge pm-badge-primary">Interactive Live</span>
+                    <span class="pm-badge pm-badge-primary">Weekly MCQ</span>
+                    <span class="pm-badge pm-badge-primary">Recorded Backups</span>
+                  </div>
+
+                  <div class="pm-course-footer">
+                    <div class="pm-course-price-lockup">
+                      <span class="pm-course-price-orig">Rs. 4,499/-</span>
+                      <span class="pm-course-price-curr">Rs. 2,499/-</span>
+                    </div>
+                    <a href="course-detail.html" class="pm-btn pm-btn-primary" style="padding: 8px 16px; min-height: 40px; font-size: 0.875rem;">Enroll Now</a>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Course Card 3: Class 12 Science (Real content from screenshot page 16) -->
+              <article class="pm-course-card">
+                <div class="pm-course-thumb">
+                  <div class="pm-course-badge-top">
+                    <span class="pm-badge pm-badge-green">Free Demo</span>
+                  </div>
+                  <svg width="100%" height="100%" viewBox="0 0 360 202" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="360" height="202" fill="#064E3B"/>
+                    <circle cx="280" cy="100" r="70" fill="#10B981" opacity="0.3"/>
+                    <text x="24" y="60" font-family="Poppins, sans-serif" font-weight="800" font-size="18" fill="#6EE7B7">CLASS 12 (SCIENCE):</text>
+                    <text x="24" y="90" font-family="Poppins, sans-serif" font-weight="800" font-size="24" fill="#FFFFFF">PROJECT 4.0</text>
+                    <text x="24" y="130" font-family="Inter, sans-serif" font-size="12" fill="#CBD5E1">NEB Board Revision & Free Demo Access</text>
+                  </svg>
+                </div>
+                <div class="pm-course-content">
+                  <div class="pm-course-category">NEB Class 12</div>
+                  <h3 class="pm-course-title">Class 12 (Science) 2083: Project 4.0</h3>
+                  <p class="pm-course-desc">Full-year board exam preparation course with complete question bank solutions and revision notes.</p>
+                  
+                  <div class="pm-course-features">
+                    <span class="pm-badge pm-badge-green">Free Demo Access</span>
+                    <span class="pm-badge pm-badge-primary">Exam Focus</span>
+                  </div>
+
+                  <div class="pm-course-footer">
+                    <div class="pm-course-price-lockup">
+                      <span class="pm-course-price-orig" style="visibility: hidden;">—</span>
+                      <span class="pm-course-price-curr free">Free</span>
+                    </div>
+                    <a href="course-detail.html" class="pm-btn pm-btn-secondary" style="padding: 8px 16px; min-height: 40px; font-size: 0.875rem;">Enroll Free</a>
+                  </div>
+                </div>
+              </article>
+
+            </div>
+
+            <!-- View All Courses Link -->
+            <div style="text-align: center; margin-top: var(--sp-6);">
+              <a href="courses.html" class="pm-btn pm-btn-outline">
+                Explore All Courses & Batches
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ==========================================================================
+             SECTION 5: HOW IT WORKS?
+             Preserves exact 3 steps (Register, Attend Live, Practice & Improve)
+             ========================================================================== -->
+        <section class="pm-section" aria-label="How Padhai Mantra Works">
+          <div class="pm-container">
+            <div class="pm-section-header">
+              <span class="pm-eyebrow">Seamless Experience</span>
+              <h2>How it Works?</h2>
+              <p>Learn how to make your education seamless and successful with three simple steps.</p>
+            </div>
+
+            <div class="pm-steps-grid">
+              
+              <!-- Step 01 (Real content from brief page 11) -->
+              <div class="pm-step-card">
+                <div class="pm-step-num">01</div>
+                <h3>Register</h3>
+                <p>Quick form to reserve your seat in the next Batch.</p>
+              </div>
+
+              <!-- Step 02 -->
+              <div class="pm-step-card">
+                <div class="pm-step-num">02</div>
+                <h3>Attend Live</h3>
+                <p>Join scheduled live classes with interactive sessions.</p>
+              </div>
+
+              <!-- Step 03 -->
+              <div class="pm-step-card">
+                <div class="pm-step-num">03</div>
+                <h3>Practice & Improve</h3>
+                <p>Take mock tests and review detailed performance reports.</p>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================================================
+             SECTION 6: WHAT OUR STUDENTS SAY (TESTIMONIALS)
+             Solves awkward title, tiny scrollbars, and uneven heights
+             ========================================================================== -->
+        <section class="pm-section pm-section-soft" id="testimonials">
+          <div class="pm-container">
+            <div class="pm-section-header">
+              <span class="pm-eyebrow">Student Stories</span>
+              <!-- Replaced awkward "From Our Students About Us" as requested -->
+              <h2>What Our Students Say</h2>
+              <p>Hear what our students have to say about Padhai Mantra and their journey to top marks.</p>
+            </div>
+
+            <div class="pm-testimonials-grid">
+              
+              <!-- Testimonial 1 (Real content from brief page 11) -->
+              <article class="pm-testimonial-card">
+                <div>
+                  <div class="pm-testimonial-header">
+                    <div class="pm-testimonial-avatar">SR</div>
+                    <div>
+                      <div class="pm-testimonial-author">Saujan Rai</div>
+                      <div class="pm-testimonial-meta">3.90 GPA, SEE-2081</div>
+                    </div>
+                    <span style="font-size: 0.65rem; color: #065F46; background: #ECFDF5; border: 1px solid #A7F3D0; padding: 3px 8px; border-radius: 20px; font-weight: 700; margin-left: auto;">Verified</span>
+                  </div>
+                  <div class="pm-testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                  <p class="pm-testimonial-body clamped">
+                    Preparing for SEE was a challenging journey, and Padhai Mantra became a great support system throughout my preparation. Their clear explanations, targeted practice questions, and responsive mentors helped me build strong concepts.
+                  </p>
+                </div>
+                <button type="button" class="pm-testimonial-more">Read more</button>
+              </article>
+
+              <!-- Testimonial 2 (Real content from brief page 11) -->
+              <article class="pm-testimonial-card">
+                <div>
+                  <div class="pm-testimonial-header">
+                    <div class="pm-testimonial-avatar">IM</div>
+                    <div>
+                      <div class="pm-testimonial-author">Ishreya Manandhar</div>
+                      <div class="pm-testimonial-meta">4.00 GPA, SEE-2081</div>
+                    </div>
+                    <span style="font-size: 0.65rem; color: #065F46; background: #ECFDF5; border: 1px solid #A7F3D0; padding: 3px 8px; border-radius: 20px; font-weight: 700; margin-left: auto;">Verified</span>
+                  </div>
+                  <div class="pm-testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                  <p class="pm-testimonial-body clamped">
+                    I found Padhai Mantra to be a really reliable means to get extra help for SEE. All the mentors and teachers were very helpful in clearing our doubts. The tool and structured mock tests gave me real exam confidence.
+                  </p>
+                </div>
+                <button type="button" class="pm-testimonial-more">Read more</button>
+              </article>
+
+              <!-- Testimonial 3 (Real content from brief page 11) -->
+              <article class="pm-testimonial-card">
+                <div>
+                  <div class="pm-testimonial-header">
+                    <div class="pm-testimonial-avatar">AS</div>
+                    <div>
+                      <div class="pm-testimonial-author">Abhyudit Bikram Shah</div>
+                      <div class="pm-testimonial-meta">3.90 GPA, SEE-2082</div>
+                    </div>
+                    <span style="font-size: 0.65rem; color: #065F46; background: #ECFDF5; border: 1px solid #A7F3D0; padding: 3px 8px; border-radius: 20px; font-weight: 700; margin-left: auto;">Verified</span>
+                  </div>
+                  <div class="pm-testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                  <p class="pm-testimonial-body clamped">
+                    Padhai Mantra has been very helpful for my studies and the journey across class 10 also for entrance preparation. The classes, guidance, and support provided throughout the academic year made all the difference in my scores.
+                  </p>
+                </div>
+                <button type="button" class="pm-testimonial-more">Read more</button>
+              </article>
+
+              <!-- Testimonial 4 (Real content from brief page 11) -->
+              <article class="pm-testimonial-card">
+                <div>
+                  <div class="pm-testimonial-header">
+                    <div class="pm-testimonial-avatar">DS</div>
+                    <div>
+                      <div class="pm-testimonial-author">Deepson Simkhada</div>
+                      <div class="pm-testimonial-meta">4.00 GPA, SEE-2082</div>
+                    </div>
+                    <span style="font-size: 0.65rem; color: #065F46; background: #ECFDF5; border: 1px solid #A7F3D0; padding: 3px 8px; border-radius: 20px; font-weight: 700; margin-left: auto;">Verified</span>
+                  </div>
+                  <div class="pm-testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                  <p class="pm-testimonial-body clamped">
+                    Padhai mantra was very helpful in my journey to 4 GPA. I was inspired by the seniors featured in the toppers masterclass and it gave me continuous motivation for my preparation. I would like to thank all the mentors.
+                  </p>
+                </div>
+                <button type="button" class="pm-testimonial-more">Read more</button>
+              </article>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================================================
+             SECTION 7: RECENT NEWS / ARTICLES PREVIEW
+             Solves raw &nbsp; encoding artifacts and missing card structure
+             ========================================================================== -->
+        <section class="pm-section" id="articles">
+          <div class="pm-container">
+            <div class="pm-section-header">
+              <span class="pm-eyebrow">Stay Updated</span>
+              <h2>Recent News & Educational Updates</h2>
+              <p>Be in the know about what matters to you most in Nepali education.</p>
+            </div>
+
+            <div class="pm-news-grid">
+              
+              <!-- Featured Story (Real article from screenshot page 12) -->
+              <article class="pm-featured-news">
+                <div class="pm-featured-thumb">
+                  <svg width="100%" height="100%" viewBox="0 0 400 225" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="400" height="225" fill="#0B2545"/>
+                    <polygon points="200,40 230,110 300,110 240,150 260,210 200,170 140,210 160,150 100,110 170,110" fill="#125BCC" opacity="0.6"/>
+                    <text x="200" y="160" font-family="Poppins, sans-serif" font-weight="700" font-size="14" fill="#FFFFFF" text-anchor="middle">Institute of Engineering (IOE)</text>
+                  </svg>
+                </div>
+                <div class="pm-featured-body">
+                  <div class="pm-news-meta">
+                    <span class="pm-badge pm-badge-amber">News</span>
+                    <span>By Admin</span>
+                    <span>Ashad 2083</span>
+                  </div>
+                  <h3 style="margin-bottom: var(--sp-1); font-size: 1.25rem;">
+                    <a href="article-detail.html" style="color: var(--pm-slate-900);">Tribhuvan University Institute of Engineering (IOE) campus in Madhesh Province</a>
+                  </h3>
+                  <p style="font-size: 0.875rem; color: var(--pm-slate-600); margin-bottom: var(--sp-2);">
+                    The government is moving forward with plans to establish a new Institute of Engineering (IOE) constituent campus in Madhesh Province to expand technical education.
+                  </p>
+                  <a href="article-detail.html" class="pm-btn-text" style="align-self: flex-start; padding: 0;">Read More →</a>
+                </div>
+              </article>
+
+              <!-- Secondary Stories List (Real articles from screenshot page 12) -->
+              <div class="pm-news-list">
+                
+                <a href="articles.html" class="pm-news-item">
+                  <div class="pm-news-item-thumb">
+                    <svg width="100%" height="100%" viewBox="0 0 120 90" fill="#E2E8F0">
+                      <rect width="120" height="90" fill="#065F46"/>
+                      <text x="60" y="50" font-family="Mukta, sans-serif" font-weight="700" font-size="11" fill="#A7F3D0" text-anchor="middle">धान दिवस</text>
+                    </svg>
+                  </div>
+                  <div class="pm-news-item-content">
+                    <div class="pm-news-meta" style="margin-bottom: 2px;">
+                      <span class="pm-badge pm-badge-green" style="font-size: 0.65rem; padding: 2px 6px;">News</span>
+                      <span style="font-size: 0.7rem;">Admin</span>
+                    </div>
+                    <div class="pm-news-item-title">
+                      Celebrating National Paddy Day & Ashad 15: Honoring the Hands That Nourish Our Nation
+                    </div>
+                    <span class="nepali-text" style="font-size: 0.75rem; color: var(--pm-slate-500);">राष्ट्रिय धान दिवस तथा असार १५ को शुभकामना</span>
+                  </div>
+                </a>
+
+                <a href="articles.html" class="pm-news-item">
+                  <div class="pm-news-item-thumb">
+                    <svg width="100%" height="100%" viewBox="0 0 120 90" fill="#E2E8F0">
+                      <rect width="120" height="90" fill="#1E293B"/>
+                      <text x="60" y="50" font-family="Inter, sans-serif" font-weight="700" font-size="10" fill="#CBD5E1" text-anchor="middle">Education VAT</text>
+                    </svg>
+                  </div>
+                  <div class="pm-news-item-content">
+                    <div class="pm-news-meta" style="margin-bottom: 2px;">
+                      <span class="pm-badge pm-badge-amber" style="font-size: 0.65rem; padding: 2px 6px;">Policy</span>
+                      <span style="font-size: 0.7rem;">Admin</span>
+                    </div>
+                    <div class="pm-news-item-title">
+                      VAT on Educational Institutions: A Step Toward a Stronger Education Sector
+                    </div>
+                    <span style="font-size: 0.75rem; color: var(--pm-slate-500);">Overview of budget reforms impacting schools.</span>
+                  </div>
+                </a>
+
+                <a href="articles.html" class="pm-news-item">
+                  <div class="pm-news-item-thumb">
+                    <svg width="100%" height="100%" viewBox="0 0 120 90" fill="#E2E8F0">
+                      <rect width="120" height="90" fill="#0C4A6E"/>
+                      <text x="60" y="50" font-family="Inter, sans-serif" font-weight="700" font-size="10" fill="#38BDF8" text-anchor="middle">Hackathon</text>
+                    </svg>
+                  </div>
+                  <div class="pm-news-item-content">
+                    <div class="pm-news-meta" style="margin-bottom: 2px;">
+                      <span class="pm-badge pm-badge-primary" style="font-size: 0.65rem; padding: 2px 6px;">Event</span>
+                      <span style="font-size: 0.7rem;">Admin</span>
+                    </div>
+                    <div class="pm-news-item-title">
+                      Lumbini Police is Organizing Nepal's First Police-Tech Hackathon 2083
+                    </div>
+                    <span style="font-size: 0.75rem; color: var(--pm-slate-500);">Big opportunity for young developers and tech enthusiasts.</span>
+                  </div>
+                </a>
+
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================================================
+             SECTION 8: FAQS ACCORDION
+             Real questions from brief page 12–13 with clean collapse behavior
+             ========================================================================== -->
+        <section class="pm-section pm-section-soft" id="faqs">
+          <div class="pm-container">
+            <div class="pm-section-header">
+              <span class="pm-eyebrow">Clear Answers</span>
+              <h2>Frequently Asked Questions (FAQs)</h2>
+              <p>Find solutions to the common questions about Padhai Mantra batches and methodology.</p>
+            </div>
+
+            <div class="pm-faq-list">
+              
+              <!-- FAQ 1 (Real item from screenshot) -->
+              <div class="pm-faq-item active">
+                <button type="button" class="pm-faq-question" aria-expanded="true">
+                  <span>1. What is Padhai Mantra?</span>
+                  <span class="pm-faq-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                  </span>
+                </button>
+                <div class="pm-faq-answer">
+                  Padhai Mantra is a dedicated Nepali ed-tech platform specifically designed for SEE (Class 10) and NEB Class 11–12 students. We deliver structured exam-oriented online courses, interactive live classes, mock tests, and mentor support to help learners achieve top GPA results.
+                </div>
+              </div>
+
+              <!-- FAQ 2 -->
+              <div class="pm-faq-item">
+                <button type="button" class="pm-faq-question" aria-expanded="false">
+                  <span>2. Why Padhai Mantra? What's the difference?</span>
+                  <span class="pm-faq-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                  </span>
+                </button>
+                <div class="pm-faq-answer">
+                  Unlike generic tutorials, Padhai Mantra follows the exact curriculum prescribed by the National Examination Board (NEB) of Nepal. We combine live interactive problem solving, dedicated Discord community doubt clearing, and regular weekly mock exams with feedback.
+                </div>
+              </div>
+
+              <!-- FAQ 3 -->
+              <div class="pm-faq-item">
+                <button type="button" class="pm-faq-question" aria-expanded="false">
+                  <span>3. Where do the online classes and activities happen?</span>
+                  <span class="pm-faq-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                  </span>
+                </button>
+                <div class="pm-faq-answer">
+                  All live interactive classes, video lecture recordings, and mock tests are hosted inside our web platform and official Padhai Mantra mobile app. Enrolled students also get access to our moderated Discord community for continuous discussions.
+                </div>
+              </div>
+
+              <!-- FAQ 4 -->
+              <div class="pm-faq-item">
+                <button type="button" class="pm-faq-question" aria-expanded="false">
+                  <span>4. Only online classes? Or more?</span>
+                  <span class="pm-faq-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                  </span>
+                </button>
+                <div class="pm-faq-answer">
+                  You get much more than live classes: complete recorded session archives for 24/7 revision, downloadable offline notes & PDFs, weekly MCQ test practices, and periodic masterclasses conducted by previous 4.0 GPA SEE and NEB toppers.
+                </div>
+              </div>
+
+              <!-- FAQ 5 -->
+              <div class="pm-faq-item">
+                <button type="button" class="pm-faq-question" aria-expanded="false">
+                  <span>5. How do you relate with the students' goals?</span>
+                  <span class="pm-faq-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                  </span>
+                </button>
+                <div class="pm-faq-answer">
+                  We align directly with students' academic milestones — whether securing entrance admission into top Kathmandu +2 colleges (St. Xavier's, KMC, SOS) or mastering board exam past papers through structured revision timelines.
+                </div>
+              </div>
+
+              <!-- FAQ 6 -->
+              <div class="pm-faq-item">
+                <button type="button" class="pm-faq-question" aria-expanded="false">
+                  <span>6. Who are the mentors and how is your team aligned?</span>
+                  <span class="pm-faq-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                  </span>
+                </button>
+                <div class="pm-faq-answer">
+                  Our faculty is led by experienced educators including Dr. Anurag Silwal (Founder & Director) and specialized subject mentors in Mathematics, Science, and English with extensive experience teaching Nepal's curriculum.
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================================================
+             SECTION 9: DOWNLOAD OUR MOBILE APP
+             Replaces lorem-ipsum mockup with real educational preview
+             ========================================================================== -->
+        <section class="pm-container">
+          <div class="pm-app-section">
+            <div class="pm-app-grid">
+              
+              <div class="pm-app-content">
+                <div class="pm-badge pm-badge-amber" style="margin-bottom: var(--sp-2);">Mantra to your dream education</div>
+                <h2>DOWNLOAD OUR MOBILE APP<br>LEARN ANYTIME, ANYWHERE!</h2>
+                <p>
+                  Get ready to experience seamless learning right from your mobile device. Access all features, courses, and resources anytime, anywhere — on the platform you love.
+                </p>
+
+                <div class="pm-store-buttons">
+                  <!-- Google Play Store Button -->
+                  <a href="#playstore" class="pm-store-btn" aria-label="Get it on Google Play">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M3.609 1.814L13.793 12 3.61 22.186a1.996 1.996 0 0 1-.61-1.428V3.242c0-.54.225-1.03.609-1.428zm11.242 11.244l2.58 2.58-11.838 6.83 9.258-9.41zm0-2.116L5.593 1.532l11.838 6.83-2.58 2.58zm1.488 1.488l3.18-1.837a1.642 1.642 0 0 0 0-2.846l-3.18-1.837-2.058 2.058 2.058 2.462z"/>
+                    </svg>
+                    <div class="pm-store-text">
+                      <span class="pm-store-label">GET IT ON</span>
+                      <span class="pm-store-name">Google Play</span>
+                    </div>
+                  </a>
+
+                  <!-- Apple App Store Button -->
+                  <a href="#appstore" class="pm-store-btn" aria-label="Download on the App Store">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.92-2.85-.9.04-1.99.6-2.63 1.35-.57.66-1.06 1.73-.93 2.76 1.01.08 2.03-.51 2.64-1.26z"/>
+                    </svg>
+                    <div class="pm-store-text">
+                      <span class="pm-store-label">Download on the</span>
+                      <span class="pm-store-name">App Store</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Phone Mockup with Real Padhai Mantra UI preview -->
+              <div class="pm-app-mockup">
+                <div class="pm-phone-frame">
+                  <div class="pm-phone-notch"></div>
+                  <div class="pm-phone-screen">
+                    <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #E2E8F0; padding-bottom: 6px;">
+                      <strong style="color: #125BCC; font-size: 0.8rem;">Padhai Mantra</strong>
+                      <span class="pm-badge-live" style="font-size: 0.6rem; padding: 2px 6px;">Live</span>
+                    </div>
+                    <div style="background: #EEF5FF; border-radius: 8px; padding: 8px;">
+                      <div style="font-weight: 700; color: #0F172A; font-size: 0.75rem;">Today's Live Class</div>
+                      <div style="font-size: 0.7rem; color: #475569;">C. Mathematics • 07:45 PM</div>
+                      <span class="pm-badge pm-badge-amber" style="font-size: 0.6rem; margin-top: 4px;">Join Session</span>
+                    </div>
+                    <div style="border: 1px solid #E2E8F0; border-radius: 8px; padding: 8px;">
+                      <div style="font-weight: 700; font-size: 0.75rem; color: #0F172A;">Apex Batch 2083</div>
+                      <div style="font-size: 0.7rem; color: #64748B;">Chapter 4: Trigonometry Notes</div>
+                      <div style="font-size: 0.65rem; color: #10B981; font-weight: 600; margin-top: 2px;">✓ Downloaded PDF</div>
+                    </div>
+                    <div style="border: 1px solid #E2E8F0; border-radius: 8px; padding: 8px;">
+                      <div style="font-weight: 700; font-size: 0.75rem; color: #0F172A;">Mock Test #4</div>
+                      <div style="font-size: 0.7rem; color: #64748B;">SEE Science Practice Set</div>
+                      <div style="font-size: 0.65rem; color: #125BCC; font-weight: 600; margin-top: 2px;">Score: 92/100</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- ==========================================================================
+           GLOBAL FOOTER
+           Structured columns, no broken '|' separators, clean social proof
+           ========================================================================== -->
+      <footer class="pm-footer">
+        <div class="pm-container">
+          <div class="pm-footer-grid">
+            
+            <!-- Col 1: Brand Info -->
+            <div class="pm-footer-brand">
+              <a href="index.html" class="pm-brand" style="text-decoration: none;">
+                <img src="assets/logo.png" alt="Padhai Mantra" style="height: 40px; width: auto; object-fit: contain; filter: brightness(0) invert(1);">
+              </a>
+              <p>
+                Padhai Mantra is Nepal's dedicated ed-tech brand for SEE (Class 10) and NEB Class 11–12 students. Empowering over 30,000 learners and 190K+ YouTube community members.
+              </p>
+            </div>
+
+            <!-- Col 2: Navigation Links -->
+            <div class="pm-footer-col">
+              <h4>Quick Links</h4>
+              <ul class="pm-footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="live-classes.html">Live Classes</a></li>
+                <li><a href="mock-tests.html">Mock Tests</a></li>
+                <li><a href="scholarships.html">Scholarships</a></li>
+              </ul>
+            </div>
+
+            <!-- Col 3: Company & Legal -->
+            <div class="pm-footer-col">
+              <h4>About & Legal</h4>
+              <ul class="pm-footer-links">
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="articles.html">Articles</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="terms.html">Terms & Conditions</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+              </ul>
+            </div>
+
+            <!-- Col 4: Contact Details (Real data from brief page 13) -->
+            <div class="pm-footer-col">
+              <h4>Contact Us</h4>
+              <ul class="pm-footer-contact-list">
+                <li class="pm-footer-contact-item">
+                  <span class="pm-footer-contact-icon">📍</span>
+                  <span>Kathmandu, Nepal</span>
+                </li>
+                <li class="pm-footer-contact-item">
+                  <span class="pm-footer-contact-icon">📞</span>
+                  <div style="display: flex; flex-direction: column;">
+                    <a href="tel:+9779707799339" style="color: #CBD5E1;">+977-9707799339</a>
+                    <a href="tel:+9779705849944" style="color: #CBD5E1;">+977-9705849944</a>
+                  </div>
+                </li>
+                <li class="pm-footer-contact-item">
+                  <span class="pm-footer-contact-icon">✉️</span>
+                  <a href="mailto:hamropadhaimantra@gmail.com" style="color: #CBD5E1; word-break: break-all;">hamropadhaimantra@gmail.com</a>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+
+          <!-- Bottom Footer Row -->
+          <div class="pm-footer-bottom">
+            <div>
+              © 2026 Padhai Mantra Pvt. Ltd. All rights reserved. Kathmandu, Nepal.
+            </div>
+
+            <div class="pm-footer-social">
+              <!-- YouTube -->
+              <a href="https://youtube.com/@padhaimantra" target="_blank" rel="noopener" class="pm-social-link" aria-label="Padhai Mantra YouTube Channel">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              </a>
+              <!-- Facebook -->
+              <a href="#facebook" class="pm-social-link" aria-label="Padhai Mantra Facebook Page">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              </a>
+              <!-- WhatsApp / Phone -->
+              <a href="https://wa.me/9779705849944" class="pm-social-link" aria-label="Chat on WhatsApp">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 0C5.397 0 .015 5.382.015 12.016c0 2.12.553 4.185 1.604 6.008L0 24l6.167-1.618a11.968 11.968 0 0 0 5.864 1.528h.005c6.633 0 12.016-5.383 12.016-12.017C24.052 5.382 18.665 0 12.031 0zm.005 21.99a9.96 9.96 0 0 1-5.083-1.39l-.364-.216-3.778.99.998-3.684-.236-.376A9.94 9.94 0 0 1 2.01 12.016c0-5.526 4.496-10.021 10.026-10.021 5.529 0 10.025 4.495 10.025 10.021 0 5.526-4.496 10.02-10.025 10.02z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       PROMOTIONAL POPUP / MODAL
+       Lightweight, non-intrusive, dismissible with session memory
+       (Real content from brief page 8 & 9)
+       ========================================================================== -->
+  <div class="pm-modal-backdrop" id="promoModal" role="dialog" aria-modal="true" aria-labelledby="promoTitle">
+    <div class="pm-modal-card">
+      <button type="button" class="pm-modal-close" id="promoCloseBtn" aria-label="Close Announcement">✕</button>
+      
+      <div class="pm-modal-header-banner">
+        <span class="pm-badge pm-badge-amber" style="margin-bottom: 8px;">Special Announcement</span>
+        <h3 id="promoTitle" style="color: #FFFFFF; font-size: 1.35rem; margin-bottom: 4px;">Class 12 (Science) Free Demo!</h3>
+        <p style="color: #DBEAFE; font-size: 0.875rem;">Free enroll now to get intense with Project 4.0 Batch.</p>
+      </div>
+
+      <div class="pm-modal-content">
+        <img src="assets/flash-notice.jpg" alt="Class 12 Science Project 4.0 Free Demo" style="width: 100%; border-radius: 8px; margin-bottom: 14px; max-height: 240px; object-fit: cover;">
+        <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 10px; margin-bottom: 16px;">
+          <div style="font-weight: 700; color: #DC2626; font-size: 0.8125rem;">VALID UNTIL 30th KARTIK</div>
+          <div style="font-size: 0.8125rem; color: #475569; margin-top: 2px;">Access live interactive sessions & question bank demo.</div>
+        </div>
+
+        <div style="display: flex; gap: 10px; justify-content: center;">
+          <a href="course-detail.html" class="pm-btn pm-btn-primary" style="flex: 1;">Enroll Now</a>
+          <button type="button" class="pm-btn pm-btn-outline" id="promoDismissBtn">Dismiss</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>

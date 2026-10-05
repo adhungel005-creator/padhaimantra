@@ -8,4 +8,5 @@ Thumbs.db
 
 # Node
 node_modules/
+dist/
 npm-debug.log
