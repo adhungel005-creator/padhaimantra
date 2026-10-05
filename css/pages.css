@@ -659,3 +659,352 @@
     grid-template-columns: 1fr; /* Strict single column on mobile */
   }
 }
+
+/* ==========================================================================
+   LIVE CLASSES / LIVE COURSES HUB (Page 5 Redesign)
+   Fixes orphan lock screen, adds live player preview, weekly timetable,
+   filter chips, and conversion unlock cards
+   ========================================================================== */
+.pm-live-header-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #FEE2E2;
+  border: 1px solid #FECACA;
+  color: #DC2626;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  margin-bottom: var(--sp-2);
+}
+
+.pm-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #DC2626;
+  box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7);
+  animation: pmPulse 1.8s infinite;
+}
+
+@keyframes pmPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(220, 38, 38, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0);
+  }
+}
+
+/* Live Classroom Showcase: Player Preview + Info */
+.pm-live-showcase {
+  display: grid;
+  grid-template-columns: 1.35fr 0.85fr;
+  gap: var(--sp-6);
+  background: var(--pm-white);
+  border: 1px solid var(--pm-slate-200);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  margin: var(--sp-6) 0 var(--sp-8) 0;
+}
+
+@media (max-width: 960px) {
+  .pm-live-showcase {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pm-live-player-preview {
+  background: linear-gradient(145deg, #0B1E38 0%, #030B17 100%);
+  position: relative;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--sp-4);
+  color: #FFFFFF;
+}
+
+.pm-player-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+.pm-player-center {
+  text-align: center;
+  z-index: 2;
+  padding: var(--sp-4);
+}
+
+.pm-player-instructor-badge {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1A69E0 0%, #125BCC 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  margin: 0 auto 12px auto;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 24px rgba(18, 91, 204, 0.4);
+}
+
+.pm-player-bottombar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(8px);
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.8125rem;
+  z-index: 2;
+}
+
+.pm-live-info-panel {
+  padding: var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.pm-live-info-panel h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--pm-slate-900);
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+
+.pm-live-schedule-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #F8FAFD;
+  border: 1px solid var(--pm-slate-200);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  margin: var(--sp-4) 0;
+  font-size: 0.875rem;
+}
+
+.pm-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pm-meta-row strong {
+  color: var(--pm-slate-800);
+}
+
+.pm-meta-row span {
+  color: var(--pm-slate-600);
+}
+
+/* Timetable Container */
+.pm-timetable-container {
+  background: var(--pm-white);
+  border: 1px solid var(--pm-slate-200);
+  border-radius: var(--radius-xl);
+  padding: var(--sp-6);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: var(--sp-8);
+}
+
+.pm-timetable-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: var(--sp-5);
+  padding-bottom: var(--sp-3);
+  border-bottom: 1px solid var(--pm-slate-100);
+}
+
+.pm-timetable-header h2,
+.pm-timetable-header h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--pm-slate-900);
+  margin: 0;
+}
+
+.pm-schedule-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pm-schedule-row-card {
+  display: grid;
+  grid-template-columns: 180px 1.5fr 140px auto;
+  align-items: center;
+  gap: 16px;
+  background: #FFFFFF;
+  border: 1px solid var(--pm-slate-200);
+  border-radius: var(--radius-lg);
+  padding: 16px 20px;
+  transition: all var(--transition-fast);
+}
+
+.pm-schedule-row-card:hover {
+  border-color: var(--pm-primary-200);
+  box-shadow: 0 4px 12px rgba(18, 91, 204, 0.08);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 860px) {
+  .pm-schedule-row-card {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 14px;
+  }
+}
+
+.pm-sched-day {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pm-sched-day strong {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--pm-slate-900);
+}
+
+.pm-sched-time {
+  font-size: 0.8125rem;
+  color: var(--pm-primary);
+  font-weight: 600;
+}
+
+.pm-sched-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pm-sched-subject {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--pm-slate-900);
+}
+
+.pm-sched-tutor {
+  font-size: 0.8125rem;
+  color: var(--pm-slate-500);
+}
+
+.pm-sched-status {
+  text-align: left;
+}
+
+/* Unlock Live Learning Banner Callout */
+.pm-unlock-callout {
+  margin-top: var(--sp-6);
+  background: linear-gradient(135deg, #125BCC 0%, #0B3A82 100%);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-6);
+  color: #FFFFFF;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--sp-5);
+  box-shadow: 0 8px 24px rgba(18, 91, 204, 0.25);
+}
+
+@media (max-width: 860px) {
+  .pm-unlock-callout {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+.pm-unlock-icon {
+  font-size: 2.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.pm-unlock-content h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 6px;
+}
+
+.pm-unlock-content p {
+  color: #DBEAFE;
+  font-size: 0.90625rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Live Learning Perks Grid */
+.pm-live-perks-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-8);
+}
+
+@media (max-width: 768px) {
+  .pm-live-perks-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pm-perk-card {
+  background: var(--pm-white);
+  border: 1px solid var(--pm-slate-200);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-5);
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+}
+
+.pm-perk-card:hover {
+  border-color: var(--pm-primary-200);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+}
+
+.pm-perk-icon {
+  font-size: 1.85rem;
+  margin-bottom: 12px;
+}
+
+.pm-perk-card h4 {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--pm-slate-900);
+  margin-bottom: 6px;
+}
+
+.pm-perk-card p {
+  font-size: 0.875rem;
+  color: var(--pm-slate-600);
+  line-height: 1.55;
+  margin: 0;
+}
+
