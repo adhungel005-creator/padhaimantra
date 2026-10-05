@@ -1,0 +1,650 @@
+/* ==========================================================================
+   PADHAI MANTRA - TEMPLATE STYLES (PAGES 2–16 + 404)
+   Shared modular styles for all public templates adhering strictly to the brief
+   ========================================================================== */
+
+/* ==========================================================================
+   Page Headers / Banners (Unified H1 & Intro across templates)
+   ========================================================================== */
+.pm-page-header {
+  padding: var(--sp-8) 0 var(--sp-6) 0;
+  background: radial-gradient(800px 300px at 50% 0%, rgba(18, 91, 204, 0.07) 0%, transparent 70%), #FFFFFF;
+  border-bottom: 1px solid var(--pm-slate-200);
+}
+
+.pm-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  color: var(--pm-slate-500);
+  margin-bottom: var(--sp-2);
+  flex-wrap: wrap;
+}
+
+.pm-breadcrumb a {
+  color: var(--pm-slate-600);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+.pm-breadcrumb a:hover {
+  color: var(--pm-primary);
+}
+
+.pm-breadcrumb-sep {
+  color: var(--pm-slate-400);
+}
+
+.pm-page-title {
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 800;
+  color: var(--pm-slate-900);
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--sp-1);
+}
+
+.pm-page-desc {
+  font-size: 1.0625rem;
+  color: var(--pm-slate-600);
+  max-width: 680px;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   Unified Filter Bar (Search + Chips) - Fixes Course Listing defect
+   ========================================================================== */
+.pm-filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  background: var(--pm-white);
+  border: 1px solid var(--pm-slate-200);
+  border-radius: var(--radius-lg);
+  padding: 12px 18px;
+  margin-bottom: var(--sp-6);
+  box-shadow: var(--shadow-sm);
+}
+
+.pm-filter-chips {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.pm-chip {
+  padding: 8px 18px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--pm-slate-200);
+  background: var(--pm-white);
+  color: var(--pm-slate-700);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pm-chip:hover {
+  border-color: var(--pm-primary-200);
+  color: var(--pm-primary);
+  background: var(--pm-primary-50);
+}
+
+.pm-chip.active {
+  background: var(--pm-primary);
+  border-color: var(--pm-primary);
+  color: var(--pm-white) !important;
+  box-shadow: 0 2px 8px rgba(18, 91, 204, 0.3);
+}
+
+.pm-search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 280px;
+}
+
+@media (max-width: 768px) {
+  .pm-search-box {
+    width: 100%;
+    min-width: unset;
+  }
+  .pm-filter-chips {
+    width: 100%;
+  }
+}
+
+.pm-search-input-wrap {
+  position: relative;
+  flex-grow: 1;
+}
+
+.pm-search-input-wrap input {
+  width: 100%;
+  height: 42px;
+  padding: 0 16px 0 38px;
+  border: 1px solid var(--pm-slate-300);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  color: var(--pm-slate-800);
+  background: var(--pm-white);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.pm-search-input-wrap input:focus {
+  outline: none;
+  border-color: var(--pm-primary);
+  box-shadow: 0 0 0 3px rgba(18, 91, 204, 0.15);
+}
+
+.pm-search-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  color: var(--pm-slate-400);
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   Course Detail Hero & Layout
+   ========================================================================== */
+.pm-course-hero {
+  padding: var(--sp-8) 0;
+  background: linear-gradient(180deg, #09192F 0%, #0F2A4A 100%);
+  color: var(--pm-white);
+  position: relative;
+}
+
+.pm-course-hero-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  align-items: center;
+  gap: var(--sp-8);
+}
+
+@media (max-width: 992px) {
+  .pm-course-hero-grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+}
+
+.pm-course-hero h1 {
+  color: var(--pm-white);
+  font-size: clamp(1.85rem, 3vw, 2.5rem);
+  margin-bottom: var(--sp-2);
+}
+
+.pm-course-hero-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 0.875rem;
+  color: #CBD5E1;
+  margin-bottom: var(--sp-4);
+}
+
+.pm-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Horizontally Scrollable Tabs (Solves 3+1 broken mobile tabs) */
+.pm-tabs-bar {
+  background: var(--pm-white);
+  border-bottom: 1px solid var(--pm-slate-200);
+  position: sticky;
+  top: 72px;
+  z-index: 400;
+}
+
+@media (max-width: 768px) {
+  .pm-tabs-bar {
+    top: 60px;
+  }
+}
+
+.pm-tabs-scroll {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 0 4px;
+}
+.pm-tabs-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.pm-tab-btn {
+  padding: 16px 4px;
+  font-family: var(--font-heading);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--pm-slate-600);
+  background: none;
+  border: none;
+  border-bottom: 2.5px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.pm-tab-btn:hover {
+  color: var(--pm-primary);
+}
+
+.pm-tab-btn.active {
+  color: var(--pm-primary);
+  border-bottom-color: var(--pm-primary);
+}
+
+/* Subject List (Solves 3-line broken metadata defect) */
+.pm-subject-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pm-subject-item {
+  background: var(--pm-white);
+  border: 1px solid var(--pm-slate-200);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  transition: all var(--transition-fast);
+}
+.pm-subject-item:hover {
+  border-color: var(--pm-primary-200);
+  box-shadow: var(--shadow-sm);
+}
+
+.pm-subject-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pm-subject-title {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--pm-slate-900);
+}
+
+.pm-subject-meta {
+  font-size: 0.8125rem;
+  color: var(--pm-slate-500);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Pricing Hierarchy Cards (3 Months vs 12 Months) */
+.pm-pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-4);
+}
+
+.pm-pricing-card {
+  border: 1.5px solid var(--pm-slate-200);
+  border-radius: var(--radius-lg);
+  padding: 18px 14px;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  background: var(--pm-white);
+  position: relative;
+}
+
+.pm-pricing-card.selected,
+.pm-pricing-card:hover {
+  border-color: var(--pm-primary);
+  box-shadow: 0 4px 14px rgba(18, 91, 204, 0.15);
+}
+
+.pm-pricing-badge {
+  position: absolute;
+  top: -10px;
+  right: 14px;
+  font-size: 0.65rem;
+  font-weight: 800;
+  background: var(--pm-primary);
+  color: var(--pm-white);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+}
+
+/* Sticky Bottom Mobile Bar for Course Detail */
+.pm-sticky-bottom-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid var(--pm-slate-200);
+  padding: 12px 18px;
+  z-index: 500;
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.08);
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .pm-sticky-bottom-bar {
+    display: flex;
+  }
+}
+
+/* ==========================================================================
+   Scholarship Cards
+   ========================================================================== */
+.pm-scholarships-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-4);
+}
+
+@media (max-width: 1100px) {
+  .pm-scholarships-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .pm-scholarships-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pm-scholarship-card {
+  background: var(--pm-white);
+  border: 1px solid var(--pm-slate-200);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+}
+
+.pm-scholarship-card:hover {
+  border-color: var(--pm-primary-200);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-4px);
+}
+
+.pm-scholarship-thumb {
+  aspect-ratio: 16 / 9;
+  background: var(--pm-slate-800);
+  position: relative;
+  overflow: hidden;
+}
+
+.pm-scholarship-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pm-scholarship-body {
+  padding: var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.pm-scholarship-institution {
+  font-family: var(--font-heading);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--pm-slate-900);
+  margin-bottom: 6px;
+}
+
+.pm-scholarship-amount {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--pm-primary);
+  margin-bottom: 12px;
+}
+
+.pm-scholarship-perks {
+  list-style: none;
+  font-size: 0.8125rem;
+  color: var(--pm-slate-600);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: var(--sp-3);
+  flex-grow: 1;
+}
+
+.pm-scholarship-perks li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pm-scholarship-footer {
+  padding-top: var(--sp-3);
+  border-top: 1px solid var(--pm-slate-100);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* ==========================================================================
+   Founder Block (About Us Page)
+   ========================================================================== */
+.pm-founder-card {
+  background: var(--pm-white);
+  border: 1px solid var(--pm-slate-200);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  align-items: center;
+  margin: var(--sp-8) 0;
+}
+
+@media (max-width: 860px) {
+  .pm-founder-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pm-founder-photo {
+  height: 100%;
+  min-height: 340px;
+  background: linear-gradient(180deg, #1A69E0 0%, #0F2A4A 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pm-founder-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pm-founder-content {
+  padding: var(--sp-8) var(--sp-6);
+}
+
+/* ==========================================================================
+   Legal Template (Terms & Privacy with Sticky TOC)
+   ========================================================================== */
+.pm-legal-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: var(--sp-8);
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .pm-legal-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pm-legal-toc {
+  position: sticky;
+  top: 96px;
+  background: var(--pm-white);
+  border: 1px solid var(--pm-slate-200);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-4);
+  box-shadow: var(--shadow-sm);
+}
+
+.pm-legal-toc-title {
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--pm-slate-500);
+  letter-spacing: 0.06em;
+  margin-bottom: var(--sp-2);
+}
+
+.pm-legal-toc-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pm-legal-toc-list a {
+  font-size: 0.84375rem;
+  color: var(--pm-slate-600);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  line-height: 1.4;
+  display: block;
+}
+.pm-legal-toc-list a:hover {
+  color: var(--pm-primary);
+}
+
+.pm-legal-content {
+  max-width: 720px; /* Comfortable reading column max width */
+}
+
+.pm-legal-section {
+  margin-bottom: var(--sp-6);
+  scroll-margin-top: 110px;
+}
+
+.pm-legal-section h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: var(--sp-2);
+  color: var(--pm-slate-900);
+}
+
+.pm-legal-section p,
+.pm-legal-section ul {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--pm-slate-600);
+  margin-bottom: var(--sp-2);
+}
+
+.pm-legal-section ul {
+  padding-left: 20px;
+}
+
+/* ==========================================================================
+   Auth Templates (Login, Register, Forgot Password)
+   ========================================================================== */
+.pm-auth-wrapper {
+  min-height: calc(100vh - 140px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-8) var(--sp-3);
+  background: radial-gradient(800px 400px at 50% 20%, rgba(18, 91, 204, 0.06) 0%, transparent 70%), #F8FAFD;
+}
+
+.pm-auth-card {
+  width: 100%;
+  max-width: 460px;
+  background: var(--pm-white);
+  border: 1px solid var(--pm-slate-200);
+  border-radius: var(--radius-xl);
+  padding: var(--sp-6);
+  box-shadow: var(--shadow-card);
+}
+
+.pm-auth-card.wide {
+  max-width: 680px;
+}
+
+.pm-form-group {
+  margin-bottom: var(--sp-3);
+}
+
+.pm-form-label {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--pm-slate-700);
+  margin-bottom: 6px;
+}
+
+.pm-form-input,
+.pm-form-select {
+  width: 100%;
+  height: 46px;
+  padding: 0 16px;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: var(--pm-slate-900);
+  background: var(--pm-white);
+  border: 1px solid var(--pm-slate-300);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.pm-form-input:focus,
+.pm-form-select:focus {
+  outline: none;
+  border-color: var(--pm-primary);
+  box-shadow: 0 0 0 3px rgba(18, 91, 204, 0.15);
+}
+
+.pm-form-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-3);
+}
+
+@media (max-width: 640px) {
+  .pm-form-grid-2 {
+    grid-template-columns: 1fr; /* Strict single column on mobile */
+  }
+}

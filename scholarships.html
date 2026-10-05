@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Scholarships & College Admissions — Padhai Mantra</title>
+  <meta name="description" content="Discover scholarships for SEE graduates and +2 college entrance in Nepal. Partnered with top colleges and academies.">
+  <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
+
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body class="preview-frame-mode mode-desktop-1440">
+
+  <!-- Viewport Switcher Toolbar -->
+  <div class="pm-preview-toolbar" role="region" aria-label="Design System Viewport Switcher">
+    <div class="pm-toolbar-title">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #60A5FA;"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+      <span>Padhai Mantra UI Redesign — Scholarships</span>
+    </div>
+    <div class="pm-toolbar-controls">
+      <button type="button" class="pm-mode-btn active" data-mode="desktop-1440">Desktop 1440px</button>
+      <button type="button" class="pm-mode-btn" data-mode="mobile-390">Mobile 390px</button>
+      <button type="button" class="pm-mode-btn" data-mode="mobile-360">Android 360px</button>
+      <button type="button" class="pm-mode-btn" data-mode="responsive-fluid">Fluid Responsive</button>
+    </div>
+  </div>
+
+  <div class="preview-stage">
+    <div class="preview-frame">
+
+      <!-- Header -->
+      <header class="pm-header">
+        <div class="pm-container">
+          <div class="pm-header-inner">
+            <a href="index.html" class="pm-brand">
+              <img src="assets/logo.png" alt="Padhai Mantra" style="height: 44px; width: auto;">
+            </a>
+            <nav class="pm-nav-desktop">
+              <a href="index.html" class="pm-nav-link">Home</a>
+              <a href="courses.html" class="pm-nav-link">Courses</a>
+              <a href="live-classes.html" class="pm-nav-link">Live Classes</a>
+              <a href="mock-tests.html" class="pm-nav-link">Mock Tests</a>
+              <a href="scholarships.html" class="pm-nav-link active">Scholarships</a>
+              <a href="about-us.html" class="pm-nav-link">About Us</a>
+            </nav>
+            <div class="pm-header-actions">
+              <a href="login.html" class="pm-btn pm-btn-outline" style="padding: 9px 18px; min-height: 40px;">Log in</a>
+              <a href="register.html" class="pm-btn pm-btn-primary" style="padding: 9px 20px; min-height: 40px;">Sign up</a>
+              <button type="button" class="pm-mobile-toggle" id="mobileMenuToggle" aria-label="Open mobile menu">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Mobile Drawer -->
+      <div class="pm-drawer-backdrop" id="drawerBackdrop"></div>
+      <aside class="pm-drawer" id="mobileDrawer">
+        <div class="pm-drawer-header">
+          <a href="index.html" class="pm-brand"><img src="assets/logo.png" alt="Padhai Mantra" style="height: 32px; width: auto;"></a>
+          <button type="button" class="pm-modal-close" id="drawerClose" style="position: static; width: 36px; height: 36px;">✕</button>
+        </div>
+        <div class="pm-drawer-body">
+          <nav class="pm-drawer-nav">
+            <a href="index.html"><span>Home</span> <span>→</span></a>
+            <a href="courses.html"><span>Courses</span> <span>→</span></a>
+            <a href="live-classes.html"><span>Live Classes</span> <span>→</span></a>
+            <a href="mock-tests.html"><span>Mock Tests</span> <span>→</span></a>
+            <a href="scholarships.html" class="active"><span>Scholarships</span> <span>→</span></a>
+            <a href="about-us.html"><span>About Us</span> <span>→</span></a>
+            <a href="articles.html"><span>Articles</span> <span>→</span></a>
+            <a href="contact.html"><span>Contact Us</span> <span>→</span></a>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- Page Header -->
+      <section class="pm-page-header">
+        <div class="pm-container">
+          <div class="pm-breadcrumb">
+            <a href="index.html">Home</a>
+            <span class="pm-breadcrumb-sep">›</span>
+            <span>Scholarships</span>
+          </div>
+          <h1 class="pm-page-title">Merit Scholarships for SEE & +2 Learners</h1>
+          <p class="pm-page-desc">
+            Padhai Mantra partners with prestigious colleges and academic institutions across Kathmandu and Nepal to provide deserving students with tuition waivers and merit scholarships.
+          </p>
+        </div>
+      </section>
+
+      <!-- 3-Step 'How To Apply' Strip (Added per brief page 26 requirement) -->
+      <section style="background: #F8FAFD; border-bottom: 1px solid var(--pm-slate-200); padding: var(--sp-6) 0;">
+        <div class="pm-container">
+          <div style="text-align: center; margin-bottom: var(--sp-4);">
+            <span class="pm-eyebrow" style="font-size: 0.75rem; text-transform: uppercase; font-weight: 700; color: var(--pm-primary);">Application Process</span>
+            <h2 style="font-size: 1.35rem; margin-top: 4px;">How to Apply in 3 Steps</h2>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-4);">
+            <div style="background: var(--pm-white); border: 1px solid var(--pm-slate-200); border-radius: var(--radius-md); padding: 18px; text-align: center;">
+              <div style="font-weight: 800; color: var(--pm-primary); font-size: 1.1rem; margin-bottom: 4px;">01. Select College</div>
+              <p style="font-size: 0.8125rem; color: var(--pm-slate-600); margin: 0;">Browse eligible institutions and review eligibility criteria.</p>
+            </div>
+            <div style="background: var(--pm-white); border: 1px solid var(--pm-slate-200); border-radius: var(--radius-md); padding: 18px; text-align: center;">
+              <div style="font-weight: 800; color: var(--pm-primary); font-size: 1.1rem; margin-bottom: 4px;">02. Fill Online Form</div>
+              <p style="font-size: 0.8125rem; color: var(--pm-slate-600); margin: 0;">Submit your SEE GPA, contact info, and preferred program.</p>
+            </div>
+            <div style="background: var(--pm-white); border: 1px solid var(--pm-slate-200); border-radius: var(--radius-md); padding: 18px; text-align: center;">
+              <div style="font-weight: 800; color: var(--pm-primary); font-size: 1.1rem; margin-bottom: 4px;">03. Get Verified</div>
+              <p style="font-size: 0.8125rem; color: var(--pm-slate-600); margin: 0;">Receive official verification & fee waiver confirmation.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Scholarships Listing Grid (Real data from screenshot page 26 with Clear Hierarchy & Status Badges) -->
+      <section class="pm-section">
+        <div class="pm-container">
+          
+          <div class="pm-scholarships-grid">
+            
+            <!-- Scholarship 1: KMC Lalitpur -->
+            <article class="pm-scholarship-card">
+              <div class="pm-scholarship-thumb">
+                <div style="position: absolute; top: 12px; left: 12px; z-index: 2;">
+                  <span class="pm-badge" style="background: #FEE2E2; color: #991B1B; border: 1px solid #FECACA;">Expired 2082</span>
+                </div>
+                <div style="width: 100%; height: 100%; background: #0B2545; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700;">
+                  KMC Lalitpur
+                </div>
+              </div>
+              <div class="pm-scholarship-body">
+                <h3 class="pm-scholarship-institution">KMC Lalitpur</h3>
+                <div class="pm-scholarship-amount">Up to Rs. 10,000/-</div>
+                <ul class="pm-scholarship-perks">
+                  <li>✓ 25 Full Scholarship Seats</li>
+                  <li>✓ 16 NEB Toppers 2082</li>
+                  <li>✓ 100% NEB Pass Rate</li>
+                </ul>
+                <div style="font-size: 0.75rem; color: var(--pm-slate-500); margin-bottom: 8px;">
+                  100+ students applied • Valid till 2026-06-14
+                </div>
+                <div class="pm-scholarship-footer">
+                  <span style="font-size: 0.75rem; color: #991B1B; font-weight: 600;">Intake Closed</span>
+                  <button type="button" class="pm-btn pm-btn-outline" style="padding: 6px 14px; font-size: 0.75rem; min-height: 36px;" disabled>
+                    Expired
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Scholarship 2: Academy of Commerce (AOC) -->
+            <article class="pm-scholarship-card">
+              <div class="pm-scholarship-thumb">
+                <div style="position: absolute; top: 12px; left: 12px; z-index: 2;">
+                  <span class="pm-badge" style="background: #FEE2E2; color: #991B1B; border: 1px solid #FECACA;">Expired 2082</span>
+                </div>
+                <div style="width: 100%; height: 100%; background: #1E293B; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700;">
+                  Academy of Commerce (AOC)
+                </div>
+              </div>
+              <div class="pm-scholarship-body">
+                <h3 class="pm-scholarship-institution">Academy of Commerce (AOC)</h3>
+                <div class="pm-scholarship-amount">Up to Rs. 10,000/-</div>
+                <ul class="pm-scholarship-perks">
+                  <li>✓ 7+ AIR Holders</li>
+                  <li>✓ Plenty Scholarship Seats</li>
+                  <li>✓ Quality Experienced Faculty</li>
+                </ul>
+                <div style="font-size: 0.75rem; color: var(--pm-slate-500); margin-bottom: 8px;">
+                  100+ students applied • Valid till 2026-06-14
+                </div>
+                <div class="pm-scholarship-footer">
+                  <span style="font-size: 0.75rem; color: #991B1B; font-weight: 600;">Intake Closed</span>
+                  <button type="button" class="pm-btn pm-btn-outline" style="padding: 6px 14px; font-size: 0.75rem; min-height: 36px;" disabled>
+                    Expired
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Scholarship 3: IST College, Gyaneshwor -->
+            <article class="pm-scholarship-card">
+              <div class="pm-scholarship-thumb">
+                <div style="position: absolute; top: 12px; left: 12px; z-index: 2;">
+                  <span class="pm-badge" style="background: #FEE2E2; color: #991B1B; border: 1px solid #FECACA;">Expired 2082</span>
+                </div>
+                <div style="width: 100%; height: 100%; background: #065F46; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700;">
+                  IST College, Gyaneshwor
+                </div>
+              </div>
+              <div class="pm-scholarship-body">
+                <h3 class="pm-scholarship-institution">IST College, Gyaneshwor</h3>
+                <div class="pm-scholarship-amount">Up to Rs. 5,000/-</div>
+                <ul class="pm-scholarship-perks">
+                  <li>✓ Free CMAT Preparation</li>
+                  <li>✓ Pioneer in BHM Education</li>
+                  <li>✓ 21+ Years of Experience</li>
+                </ul>
+                <div style="font-size: 0.75rem; color: var(--pm-slate-500); margin-bottom: 8px;">
+                  100+ students applied • Valid till 2026-06-15
+                </div>
+                <div class="pm-scholarship-footer">
+                  <span style="font-size: 0.75rem; color: #991B1B; font-weight: 600;">Intake Closed</span>
+                  <button type="button" class="pm-btn pm-btn-outline" style="padding: 6px 14px; font-size: 0.75rem; min-height: 36px;" disabled>
+                    Expired
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Scholarship 4: ACCA @ Seekshya Academy -->
+            <article class="pm-scholarship-card">
+              <div class="pm-scholarship-thumb">
+                <div style="position: absolute; top: 12px; left: 12px; z-index: 2;">
+                  <span class="pm-badge pm-badge-amber">Closing Soon</span>
+                </div>
+                <div style="width: 100%; height: 100%; background: #831843; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700;">
+                  Seekshya Academy
+                </div>
+              </div>
+              <div class="pm-scholarship-body">
+                <h3 class="pm-scholarship-institution">ACCA @ Seekshya Academy</h3>
+                <div class="pm-scholarship-amount">Up to Rs. 10,000/-</div>
+                <ul class="pm-scholarship-perks">
+                  <li>✓ ACCA after SEE Program</li>
+                  <li>✓ Quality Faculty</li>
+                  <li>✓ Plenty Scholarships</li>
+                </ul>
+                <div style="font-size: 0.75rem; color: var(--pm-slate-700); font-weight: 600; margin-bottom: 8px;">
+                  100+ students applied • High Demand
+                </div>
+                <div class="pm-scholarship-footer">
+                  <span style="font-size: 0.75rem; color: #B45309; font-weight: 700;">Active Now</span>
+                  <!-- External link icon indicated per brief p. 26 -->
+                  <a href="https://forms.google.com" target="_blank" rel="noopener noreferrer" class="pm-btn pm-btn-primary" style="padding: 6px 14px; font-size: 0.75rem; min-height: 36px;">
+                    Apply Form ↗
+                  </a>
+                </div>
+              </div>
+            </article>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="pm-footer">
+        <div class="pm-container">
+          <div class="pm-footer-bottom" style="border-top: none; padding-top: 0;">
+            <div>© 2026 Padhai Mantra Pvt. Ltd. All rights reserved. Kathmandu, Nepal.</div>
+            <div><a href="courses.html" style="color: #94A3B8;">← Explore Courses</a></div>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
