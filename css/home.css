@@ -1,27 +1,25 @@
 /* ==========================================================================
-   PADHAI MANTRA - HOME PAGE STYLES
-   Solves problems specified in Page 9-15 of the Redesign Brief:
-   1. Unified Hero (Learn Smarter, Score Higher + 1 primary CTA + 1 secondary CTA)
-   2. Promotional banner as secondary compact strip
-   3. 4-column compact stats (2x2 on mobile)
-   4. Equal-height testimonials with clean clamping
-   5. Clean App download section without lorem-ipsum
-   6. Structured footer without broken '|' separators
-   7. Single-row mobile header with drawer
+   PADHAI MANTRA - HOME PAGE STYLES (PREMIUM EDITION)
+   High-end academic ed-tech aesthetics
+   Preserves all functionality & real brief content
    ========================================================================== */
 
 /* ==========================================================================
-   Header (Global Desktop & Mobile)
+   Header (Global Desktop & Mobile - Frosted Glass)
    ========================================================================== */
 .pm-header {
   position: sticky;
   top: 0;
   z-index: 500;
-  background-color: var(--pm-white);
-  border-bottom: 1px solid var(--pm-slate-200);
+  background-color: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.85);
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.04);
   height: 72px;
   display: flex;
   align-items: center;
+  transition: all var(--transition-fast);
 }
 
 @media (max-width: 768px) {
@@ -42,41 +40,10 @@
   align-items: center;
   gap: 12px;
   text-decoration: none;
+  transition: opacity var(--transition-fast);
 }
-
-.pm-logo-mark {
-  width: 40px;
-  height: 40px;
-  background: var(--pm-primary-50);
-  border: 1px solid var(--pm-primary-200);
-  border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--pm-primary);
-  flex-shrink: 0;
-}
-
-.pm-brand-text {
-  display: flex;
-  flex-direction: column;
-}
-
-.pm-brand-title {
-  font-family: var(--font-heading);
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--pm-primary);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-}
-
-.pm-brand-tagline {
-  font-size: 0.625rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  color: var(--pm-slate-500);
-  letter-spacing: 0.06em;
+.pm-brand:hover {
+  opacity: 0.92;
 }
 
 /* Desktop Nav */
@@ -108,7 +75,7 @@
   bottom: -4px;
   left: 0;
   right: 0;
-  height: 2px;
+  height: 2.5px;
   background-color: var(--pm-primary);
   border-radius: 2px;
 }
@@ -144,33 +111,36 @@
 }
 
 /* ==========================================================================
-   Section 1: Unified Hero
-   Solves the two competing heroes at the top
+   Section 1: Unified Hero (Premium Depth & Atmosphere)
    ========================================================================== */
 .pm-hero {
-  padding-top: var(--sp-8);
-  padding-bottom: var(--sp-8);
-  background: radial-gradient(circle at top right, #EEF5FF 0%, #FFFFFF 60%);
+  padding-top: var(--sp-10);
+  padding-bottom: var(--sp-10);
+  background: 
+    radial-gradient(900px 500px at 85% 15%, rgba(18, 91, 204, 0.08) 0%, transparent 65%),
+    radial-gradient(700px 400px at 10% 20%, rgba(245, 158, 11, 0.05) 0%, transparent 60%),
+    #FFFFFF;
   position: relative;
   overflow: hidden;
+  border-bottom: 1px solid var(--pm-slate-100);
 }
 
 .pm-hero-grid {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
   align-items: center;
-  gap: var(--sp-6);
+  gap: var(--sp-8);
 }
 
 @media (max-width: 900px) {
   .pm-hero-grid {
     grid-template-columns: 1fr;
-    gap: var(--sp-4);
+    gap: var(--sp-5);
   }
 }
 
 .pm-hero-content {
-  max-width: 600px;
+  max-width: 620px;
 }
 
 .pm-hero-pill {
@@ -178,29 +148,36 @@
   align-items: center;
   gap: 8px;
   background: var(--pm-white);
-  border: 1px solid var(--pm-primary-200);
+  border: 1px solid rgba(18, 91, 204, 0.2);
   padding: 6px 14px;
   border-radius: var(--radius-full);
   font-size: 0.8125rem;
   font-weight: 600;
   color: var(--pm-primary);
-  margin-bottom: var(--sp-2);
-  box-shadow: var(--shadow-sm);
+  margin-bottom: var(--sp-3);
+  box-shadow: 0 2px 6px rgba(18, 91, 204, 0.06);
 }
 
 .pm-hero h1 {
-  font-size: clamp(2.1rem, 3.8vw, 3.25rem);
+  font-size: clamp(2.25rem, 3.8vw, 3.375rem);
   font-weight: 800;
   line-height: 1.12;
-  margin-bottom: var(--sp-2);
+  margin-bottom: var(--sp-3);
   color: var(--pm-slate-900);
+  letter-spacing: -0.025em;
+}
+
+.pm-hero h1 .highlight-text {
+  color: var(--pm-primary);
+  position: relative;
+  display: inline-block;
 }
 
 .pm-hero-subtitle {
-  font-size: clamp(1rem, 1.2vw, 1.125rem);
-  line-height: 1.6;
+  font-size: clamp(1rem, 1.25vw, 1.125rem);
+  line-height: 1.65;
   color: var(--pm-slate-600);
-  margin-bottom: var(--sp-4);
+  margin-bottom: var(--sp-5);
 }
 
 .pm-hero-actions {
@@ -208,14 +185,14 @@
   align-items: center;
   flex-wrap: wrap;
   gap: var(--sp-2);
-  margin-bottom: var(--sp-4);
+  margin-bottom: var(--sp-5);
 }
 
 .pm-social-proof {
   display: flex;
   align-items: center;
-  gap: 14px;
-  padding-top: var(--sp-2);
+  gap: 16px;
+  padding-top: var(--sp-3);
   border-top: 1px solid var(--pm-slate-200);
 }
 
@@ -226,10 +203,10 @@
 
 .pm-avatar-group img,
 .pm-avatar-item {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
-  border: 2px solid var(--pm-white);
+  border: 2.5px solid var(--pm-white);
   margin-left: -10px;
   object-fit: cover;
   background: var(--pm-primary-100);
@@ -239,6 +216,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
 }
 .pm-avatar-group .pm-avatar-item:first-child {
   margin-left: 0;
@@ -247,11 +225,11 @@
 .pm-proof-text {
   font-size: 0.84375rem;
   color: var(--pm-slate-600);
-  line-height: 1.35;
+  line-height: 1.4;
 }
 .pm-proof-text strong {
   color: var(--pm-slate-900);
-  font-weight: 700;
+  font-weight: 800;
 }
 
 /* Hero Media / Illustration Box */
@@ -264,12 +242,12 @@
 .pm-hero-card-frame {
   position: relative;
   width: 100%;
-  max-width: 440px;
+  max-width: 450px;
   border-radius: var(--radius-xl);
-  background: linear-gradient(180deg, #FFFFFF 0%, #F1F5F9 100%);
-  border: 1px solid var(--pm-slate-200);
-  padding: 16px;
-  box-shadow: var(--shadow-card);
+  background: var(--pm-white);
+  border: 1px solid rgba(18, 91, 204, 0.16);
+  padding: 14px;
+  box-shadow: 0 20px 45px -10px rgba(18, 91, 204, 0.15), 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .pm-hero-image-wrap {
@@ -278,7 +256,7 @@
   aspect-ratio: 4 / 3;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  background: #E2E8F0;
+  background: linear-gradient(180deg, #F1F5F9 0%, #E2E8F0 100%);
 }
 
 .pm-hero-image-wrap img {
@@ -287,31 +265,48 @@
   object-fit: cover;
 }
 
-/* Floating Badges on Hero (Subtle, non-distracting) */
+/* Floating Badges on Hero */
 .pm-hero-floating-stat {
   position: absolute;
   bottom: 24px;
-  left: -12px;
+  left: -16px;
   background: var(--pm-white);
   border: 1px solid var(--pm-slate-200);
   border-radius: var(--radius-md);
-  padding: 10px 14px;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 10px 25px -4px rgba(15, 23, 42, 0.12);
+  z-index: 10;
+}
+
+.pm-hero-floating-tag {
+  position: absolute;
+  top: 24px;
+  right: -14px;
+  background: var(--pm-slate-900);
+  color: var(--pm-white);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-md);
+  padding: 8px 14px;
   display: flex;
   align-items: center;
   gap: 10px;
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 10px 25px -4px rgba(0, 0, 0, 0.3);
+  z-index: 10;
 }
 
 .pm-floating-icon {
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
-  background: var(--pm-green-light);
-  color: var(--pm-green);
+  background: var(--pm-amber-light);
+  color: #B45309;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 
 @media (max-width: 640px) {
@@ -319,16 +314,20 @@
     left: 8px;
     bottom: -16px;
   }
+  .pm-hero-floating-tag {
+    right: 8px;
+    top: -12px;
+  }
 }
 
 /* ==========================================================================
-   Section 2: Secondary Promotional Banner Strip
-   (Preserves the promotional announcements without pushing hero down)
+   Section 2: Secondary Promotional Banner Strip (High-End Ticker)
    ========================================================================== */
 .pm-promo-strip {
-  padding: 16px 0;
-  background-color: var(--pm-slate-900);
+  padding: 14px 0;
+  background-color: var(--pm-slate-950);
   color: var(--pm-white);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .pm-promo-inner {
@@ -336,18 +335,18 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 14px;
 }
 
 .pm-promo-badge {
   background: #DC2626;
   color: var(--pm-white);
-  font-size: 0.75rem;
-  font-weight: 700;
+  font-size: 0.71875rem;
+  font-weight: 800;
   padding: 4px 10px;
   border-radius: var(--radius-sm);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -371,43 +370,43 @@
   align-items: center;
   gap: 6px;
   text-decoration: none;
+  transition: transform var(--transition-fast);
 }
 .pm-promo-cta:hover {
   color: var(--pm-white);
-  text-decoration: underline;
+  transform: translateX(3px);
 }
 
 /* ==========================================================================
    Section 3: Compact Statistics Row
-   (Solves 300px empty tall cards on mobile)
    ========================================================================== */
 .pm-stats-section {
-  padding: var(--sp-6) 0;
+  padding: var(--sp-8) 0;
   background: var(--pm-white);
-  border-bottom: 1px solid var(--pm-slate-100);
+  border-bottom: 1px solid var(--pm-slate-200);
 }
 
 /* ==========================================================================
    Section 4: Course Discovery / Batch Programs
    ========================================================================== */
 .pm-courses-section {
-  background-color: var(--pm-slate-50);
+  background-color: #F8FAFD;
 }
 
 /* ==========================================================================
-   Section 5: How It Works (01, 02, 03)
+   Section 5: How It Works (Premium Step Timeline)
    ========================================================================== */
 .pm-steps-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--sp-4);
+  gap: var(--sp-5);
   position: relative;
 }
 
 @media (max-width: 800px) {
   .pm-steps-grid {
     grid-template-columns: 1fr;
-    gap: var(--sp-3);
+    gap: var(--sp-4);
   }
 }
 
@@ -415,51 +414,68 @@
   background: var(--pm-white);
   border: 1px solid var(--pm-slate-200);
   border-radius: var(--radius-lg);
-  padding: var(--sp-4) var(--sp-3);
+  padding: var(--sp-6) var(--sp-4);
   text-align: center;
   transition: all var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+.pm-step-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: transparent;
+  transition: background var(--transition-fast);
 }
 .pm-step-card:hover {
   border-color: var(--pm-primary-200);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+.pm-step-card:hover::before {
+  background: var(--pm-primary);
 }
 
 .pm-step-num {
-  width: 48px;
-  height: 48px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
-  background-color: var(--pm-primary);
+  background: linear-gradient(135deg, #1A69E0 0%, #125BCC 100%);
   color: var(--pm-white);
   font-family: var(--font-heading);
-  font-size: 1.125rem;
-  font-weight: 700;
+  font-size: 1.1875rem;
+  font-weight: 800;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto var(--sp-2) auto;
-  box-shadow: 0 4px 10px rgba(18, 91, 204, 0.25);
+  margin: 0 auto var(--sp-3) auto;
+  box-shadow: 0 6px 14px rgba(18, 91, 204, 0.3);
 }
 
 .pm-step-card h3 {
-  font-size: 1.125rem;
+  font-size: 1.1875rem;
+  font-weight: 700;
   margin-bottom: var(--sp-1);
+  color: var(--pm-slate-900);
 }
 
 .pm-step-card p {
-  font-size: 0.875rem;
+  font-size: 0.90625rem;
   color: var(--pm-slate-600);
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 /* ==========================================================================
    Section 6: Recent News / Articles Preview
-   (Solves raw &nbsp; and inconsistent title lengths)
    ========================================================================== */
 .pm-news-grid {
   display: grid;
   grid-template-columns: 1.15fr 1fr;
-  gap: var(--sp-4);
+  gap: var(--sp-5);
 }
 
 @media (max-width: 900px) {
@@ -475,6 +491,12 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+}
+.pm-featured-news:hover {
+  box-shadow: var(--shadow-hover);
+  border-color: var(--pm-primary-200);
 }
 
 .pm-featured-thumb {
@@ -488,10 +510,14 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.pm-featured-news:hover .pm-featured-thumb img {
+  transform: scale(1.03);
 }
 
 .pm-featured-body {
-  padding: var(--sp-3);
+  padding: var(--sp-4);
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -509,28 +535,29 @@
 .pm-news-list {
   display: flex;
   flex-direction: column;
-  gap: var(--sp-2);
+  gap: var(--sp-3);
 }
 
 .pm-news-item {
   background: var(--pm-white);
   border: 1px solid var(--pm-slate-200);
   border-radius: var(--radius-md);
-  padding: var(--sp-2);
+  padding: var(--sp-3);
   display: flex;
-  gap: var(--sp-2);
+  gap: var(--sp-3);
   transition: all var(--transition-fast);
   text-decoration: none;
+  box-shadow: var(--shadow-xs);
 }
 .pm-news-item:hover {
   border-color: var(--pm-primary-200);
-  box-shadow: var(--shadow-sm);
-  transform: translateX(2px);
+  box-shadow: var(--shadow-md);
+  transform: translateX(3px);
 }
 
 .pm-news-item-thumb {
-  width: 96px;
-  height: 72px;
+  width: 100px;
+  height: 75px;
   border-radius: var(--radius-sm);
   background: var(--pm-slate-200);
   flex-shrink: 0;
@@ -550,8 +577,8 @@
 }
 
 .pm-news-item-title {
-  font-size: 0.875rem;
-  font-weight: 600;
+  font-size: 0.90625rem;
+  font-weight: 700;
   color: var(--pm-slate-900);
   line-height: 1.35;
   margin-bottom: 4px;
@@ -562,45 +589,48 @@
 }
 
 /* ==========================================================================
-   Section 7: Download Our Mobile App
-   (Solves lorem-ipsum mockup & tight paragraph spacing)
+   Section 7: Download Our Mobile App (Midnight Sapphire Theme)
    ========================================================================== */
 .pm-app-section {
-  background: linear-gradient(135deg, #0B2545 0%, #125BCC 100%);
+  background: linear-gradient(145deg, #07172C 0%, #0D2B52 55%, #125BCC 100%);
   color: var(--pm-white);
   border-radius: var(--radius-xl);
   overflow: hidden;
-  margin-top: var(--sp-6);
-  margin-bottom: var(--sp-6);
+  margin-top: var(--sp-8);
+  margin-bottom: var(--sp-8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 50px -12px rgba(11, 37, 69, 0.4);
 }
 
 .pm-app-grid {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   align-items: center;
-  gap: var(--sp-4);
-  padding: var(--sp-8) var(--sp-6);
+  gap: var(--sp-6);
+  padding: var(--sp-10) var(--sp-8);
 }
 
 @media (max-width: 860px) {
   .pm-app-grid {
     grid-template-columns: 1fr;
-    padding: var(--sp-4);
+    padding: var(--sp-6) var(--sp-4);
     text-align: center;
   }
 }
 
 .pm-app-content h2 {
   color: var(--pm-white);
-  font-size: clamp(1.6rem, 2.5vw, 2.25rem);
-  margin-bottom: var(--sp-2);
+  font-size: clamp(1.75rem, 2.8vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: var(--sp-3);
 }
 
 .pm-app-content p {
   color: #DBEAFE;
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: var(--sp-4);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  margin-bottom: var(--sp-5);
   max-width: 520px;
 }
 
@@ -614,7 +644,7 @@
 .pm-store-buttons {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   flex-wrap: wrap;
 }
 
@@ -627,18 +657,20 @@
 .pm-store-btn {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   background: #000000;
   color: var(--pm-white) !important;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: var(--radius-md);
-  padding: 8px 16px;
+  padding: 10px 18px;
   text-decoration: none;
-  min-height: 48px;
-  transition: transform var(--transition-fast), background var(--transition-fast);
+  min-height: 52px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform var(--transition-fast), background var(--transition-fast), border-color var(--transition-fast);
 }
 .pm-store-btn:hover {
   background: #1E293B;
+  border-color: rgba(255, 255, 255, 0.4);
   transform: translateY(-2px);
 }
 
@@ -651,15 +683,16 @@
 .pm-store-label {
   font-size: 0.625rem;
   text-transform: uppercase;
-  color: var(--pm-slate-400);
+  color: #94A3B8;
   line-height: 1;
+  letter-spacing: 0.05em;
 }
 
 .pm-store-name {
   font-family: var(--font-heading);
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.25;
 }
 
 .pm-app-mockup {
@@ -668,22 +701,22 @@
 }
 
 .pm-phone-frame {
-  width: 240px;
-  height: 460px;
+  width: 250px;
+  height: 480px;
   background: #0F172A;
-  border: 8px solid #1E293B;
-  border-radius: 36px;
+  border: 9px solid #1E293B;
+  border-radius: 40px;
   overflow: hidden;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.6);
   position: relative;
 }
 
 .pm-phone-notch {
-  width: 80px;
-  height: 18px;
+  width: 84px;
+  height: 20px;
   background: #1E293B;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
   margin: 0 auto;
   position: relative;
   z-index: 10;
@@ -691,53 +724,53 @@
 
 .pm-phone-screen {
   background: var(--pm-white);
-  height: calc(100% - 18px);
-  padding: 12px;
+  height: calc(100% - 20px);
+  padding: 14px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
   font-size: 0.75rem;
   color: var(--pm-slate-800);
 }
 
 /* ==========================================================================
-   Section 8: Global Footer
-   (Solves cramped link grid, stray '|' separators & floating columns)
+   Section 8: Global Footer (Deep Midnight Slate)
    ========================================================================== */
 .pm-footer {
-  background-color: #0B192C;
+  background-color: var(--pm-slate-950);
   color: #94A3B8;
-  padding-top: var(--sp-10);
-  padding-bottom: var(--sp-4);
+  padding-top: var(--sp-12);
+  padding-bottom: var(--sp-6);
   font-size: 0.875rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .pm-footer-grid {
   display: grid;
   grid-template-columns: 1.6fr 1fr 1fr 1.4fr;
-  gap: var(--sp-6);
-  margin-bottom: var(--sp-8);
+  gap: var(--sp-8);
+  margin-bottom: var(--sp-10);
 }
 
 @media (max-width: 992px) {
   .pm-footer-grid {
     grid-template-columns: 1fr 1fr;
-    gap: var(--sp-4);
+    gap: var(--sp-5);
   }
 }
 
 @media (max-width: 640px) {
   .pm-footer-grid {
     grid-template-columns: 1fr;
-    gap: var(--sp-4);
+    gap: var(--sp-5);
   }
 }
 
 .pm-footer-brand p {
   color: #94A3B8;
-  font-size: 0.84375rem;
-  line-height: 1.6;
-  margin-top: 12px;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  margin-top: 16px;
   max-width: 320px;
 }
 
@@ -745,7 +778,7 @@
   font-size: 0.9375rem;
   font-weight: 700;
   color: var(--pm-white);
-  margin-bottom: var(--sp-2);
+  margin-bottom: var(--sp-3);
   letter-spacing: 0.02em;
 }
 
@@ -753,41 +786,42 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 .pm-footer-links a {
   color: #94A3B8;
   text-decoration: none;
-  transition: color var(--transition-fast);
+  transition: color var(--transition-fast), transform var(--transition-fast);
+  display: inline-block;
 }
 .pm-footer-links a:hover {
   color: var(--pm-white);
-  padding-left: 2px;
+  transform: translateX(2px);
 }
 
 .pm-footer-contact-list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 
 .pm-footer-contact-item {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
+  gap: 12px;
   color: #CBD5E1;
 }
 
 .pm-footer-contact-icon {
   color: var(--pm-primary-100);
-  margin-top: 3px;
+  margin-top: 2px;
   flex-shrink: 0;
 }
 
 .pm-footer-bottom {
-  padding-top: var(--sp-4);
+  padding-top: var(--sp-5);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
   align-items: center;
@@ -804,8 +838,8 @@
 }
 
 .pm-social-link {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.06);
   color: #CBD5E1;
@@ -813,12 +847,15 @@
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   transition: all var(--transition-fast);
 }
 .pm-social-link:hover {
   background: var(--pm-primary);
+  border-color: var(--pm-primary);
   color: var(--pm-white);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(18, 91, 204, 0.35);
 }
 
 /* ==========================================================================
@@ -828,21 +865,22 @@
   position: sticky;
   top: 0;
   z-index: 1200;
-  background: #0F172A;
+  background: #080E1A;
   color: var(--pm-white);
-  padding: 8px 16px;
+  padding: 10px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 0.8125rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
 }
 
 .pm-toolbar-title {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-weight: 600;
+  gap: 10px;
+  font-weight: 700;
 }
 
 .pm-toolbar-controls {
@@ -852,10 +890,10 @@
 }
 
 .pm-mode-btn {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.08);
   color: #CBD5E1;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 6px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 6px 14px;
   border-radius: var(--radius-sm);
   cursor: pointer;
   font-size: 0.75rem;
@@ -872,11 +910,12 @@
   background: var(--pm-primary);
   color: var(--pm-white);
   border-color: var(--pm-primary);
+  box-shadow: 0 2px 8px rgba(18, 91, 204, 0.4);
 }
 
 /* Framed container mode for Desktop 1440 / Mobile 390 preview */
 body.preview-frame-mode {
-  background-color: #1E293B;
+  background-color: #0E1726;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -892,7 +931,7 @@ body.preview-frame-mode {
 
 .preview-frame {
   background: var(--pm-white);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
   transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: hidden;
 }
@@ -903,14 +942,14 @@ body.mode-desktop-1440 .preview-frame {
 
 body.mode-mobile-390 .preview-frame {
   width: 390px;
-  border-radius: 28px;
-  border: 8px solid #0F172A;
+  border-radius: 32px;
+  border: 10px solid #080E1A;
 }
 
 body.mode-mobile-360 .preview-frame {
   width: 360px;
-  border-radius: 20px;
-  border: 6px solid #0F172A;
+  border-radius: 24px;
+  border: 8px solid #080E1A;
 }
 
 body.mode-responsive-fluid .preview-frame {
