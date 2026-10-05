@@ -116,24 +116,77 @@ export default function HomePage({ navigate }) {
       </section>
 
       {/* ==========================================================================
-           SECTION 2: PROMOTIONAL STRIP (Lowered from competing top position)
+           SECTION 2: CURRENT ACADEMIC ANNOUNCEMENTS & PROGRAMS
+           Modern, elevated 3-card banner row with icons, badges, and direct actions
            ========================================================================== */}
-      <section className="pm-promo-strip" aria-label="Current Offerings">
+      <section className="pm-announcements-section" aria-label="Current Offerings">
         <div className="pm-container">
-          <div className="pm-strip-inner">
-            <div className="pm-strip-item">
-              <span className="pm-strip-icon">🎯</span>
-              <span><strong>SEE 2083 Apex Batch:</strong> Full syllabus coverage with live doubt clearing.</span>
+          <div className="pm-announcements-card">
+            {/* Item 1: SEE Apex Batch */}
+            <div
+              className="pm-announce-col"
+              onClick={() => navigate('course-detail')}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => e.key === 'Enter' && navigate('course-detail')}
+            >
+              <div className="pm-announce-icon-wrap" style={{ background: '#EEF5FF', color: '#125BCC' }}>
+                <span className="pm-announce-emoji">🎯</span>
+              </div>
+              <div className="pm-announce-body">
+                <div className="pm-announce-header">
+                  <strong>SEE 2083 Apex Batch</strong>
+                  <span className="pm-badge pm-badge-primary" style={{ fontSize: '0.65rem', padding: '2px 6px' }}>Admissions Open</span>
+                </div>
+                <p className="pm-announce-text">Full syllabus coverage with daily live classes & Discord doubt clearing.</p>
+                <span className="pm-announce-link">Explore Batch →</span>
+              </div>
             </div>
-            <div className="pm-strip-divider" />
-            <div className="pm-strip-item">
-              <span className="pm-strip-icon">⚡</span>
-              <span><strong>Project 4.0:</strong> Class 12 Science Free Demo valid until Kartik 30.</span>
+
+            <div className="pm-announce-divider" />
+
+            {/* Item 2: Project 4.0 Free Demo */}
+            <div
+              className="pm-announce-col"
+              onClick={() => navigate('courses')}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => e.key === 'Enter' && navigate('courses')}
+            >
+              <div className="pm-announce-icon-wrap" style={{ background: '#FFFBEB', color: '#D97706' }}>
+                <span className="pm-announce-emoji">⚡</span>
+              </div>
+              <div className="pm-announce-body">
+                <div className="pm-announce-header">
+                  <strong>Project 4.0 (Class 12)</strong>
+                  <span className="pm-badge pm-badge-amber" style={{ fontSize: '0.65rem', padding: '2px 6px' }}>Free Demo</span>
+                </div>
+                <p className="pm-announce-text">Full-year board exam preparation valid until 30th Kartik.</p>
+                <span className="pm-announce-link">Join Free Demo →</span>
+              </div>
             </div>
-            <div className="pm-strip-divider" />
-            <div className="pm-strip-item">
-              <span className="pm-strip-icon">🎓</span>
-              <span><strong>Scholarships:</strong> Up to Rs. 10,000/- college partner scholarship aid.</span>
+
+            <div className="pm-announce-divider" />
+
+            {/* Item 3: Merit Scholarships */}
+            <div
+              className="pm-announce-col"
+              onClick={() => navigate('scholarships')}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => e.key === 'Enter' && navigate('scholarships')}
+            >
+              <div className="pm-announce-icon-wrap" style={{ background: '#ECFDF5', color: '#059669' }}>
+                <span className="pm-announce-emoji">🎓</span>
+              </div>
+              <div className="pm-announce-body">
+                <div className="pm-announce-header">
+                  <strong>Partner Scholarships</strong>
+                  <span className="pm-badge pm-badge-green" style={{ fontSize: '0.65rem', padding: '2px 6px' }}>Up to Rs. 10K</span>
+                </div>
+                <p className="pm-announce-text">College entrance fee waiver & merit aid for ambitious SEE achievers.</p>
+                <span className="pm-announce-link">View Schemes →</span>
+              </div>
             </div>
           </div>
         </div>

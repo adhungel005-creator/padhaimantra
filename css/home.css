@@ -321,60 +321,133 @@
 }
 
 /* ==========================================================================
-   Section 2: Secondary Promotional Banner Strip (High-End Ticker)
+   Section 2: Professional Announcements & Program Highlights Bar
+   Elevated, modern light card matching ed-tech design standard
    ========================================================================== */
-.pm-promo-strip {
-  padding: 14px 0;
-  background-color: var(--pm-slate-950);
-  color: var(--pm-white);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+.pm-announcements-section {
+  padding: 0 0 var(--sp-6) 0;
+  position: relative;
+  z-index: 10;
+  margin-top: -30px;
 }
 
-.pm-promo-inner {
+.pm-announcements-card {
+  background: var(--pm-white);
+  border: 1px solid rgba(18, 91, 204, 0.14);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 12px 36px -8px rgba(18, 91, 204, 0.1), 0 4px 12px rgba(15, 23, 42, 0.04);
+  display: flex;
+  align-items: stretch;
+  padding: 12px 20px;
+  gap: 16px;
+  transition: box-shadow var(--transition-normal);
+}
+
+.pm-announcements-card:hover {
+  box-shadow: 0 16px 44px -8px rgba(18, 91, 204, 0.15), 0 6px 16px rgba(15, 23, 42, 0.05);
+}
+
+.pm-announce-col {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 12px 14px;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.pm-announce-col:hover {
+  background: rgba(238, 245, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+.pm-announce-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 14px;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
 }
 
-.pm-promo-badge {
-  background: #DC2626;
-  color: var(--pm-white);
-  font-size: 0.71875rem;
-  font-weight: 800;
-  padding: 4px 10px;
-  border-radius: var(--radius-sm);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.pm-promo-text {
-  font-size: 0.875rem;
-  color: #E2E8F0;
+.pm-announce-body {
+  display: flex;
+  flex-direction: column;
   flex-grow: 1;
+  min-width: 0;
 }
 
-.pm-promo-text strong {
-  color: var(--pm-white);
+.pm-announce-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
 }
 
-.pm-promo-cta {
+.pm-announce-header strong {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--pm-slate-900);
+}
+
+.pm-announce-text {
+  font-size: 0.8125rem;
+  color: var(--pm-slate-600);
+  line-height: 1.45;
+  margin: 0 0 6px 0;
+}
+
+.pm-announce-link {
   font-size: 0.8125rem;
   font-weight: 700;
-  color: #FEF08A;
+  color: var(--pm-blue-600);
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  text-decoration: none;
+  gap: 4px;
   transition: transform var(--transition-fast);
 }
-.pm-promo-cta:hover {
-  color: var(--pm-white);
+
+.pm-announce-col:hover .pm-announce-link {
+  color: var(--pm-blue-700);
   transform: translateX(3px);
+}
+
+.pm-announce-divider {
+  width: 1px;
+  background: var(--pm-slate-200);
+  margin: 8px 0;
+  flex-shrink: 0;
+}
+
+/* Mobile & Tablet Responsiveness */
+@media (max-width: 991px) {
+  .pm-announcements-section {
+    margin-top: 0;
+    padding-top: var(--sp-4);
+  }
+
+  .pm-announcements-card {
+    flex-direction: column;
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .pm-announce-divider {
+    width: 100%;
+    height: 1px;
+    margin: 4px 0;
+  }
+
+  .pm-announce-col {
+    padding: 10px 8px;
+  }
 }
 
 /* ==========================================================================
