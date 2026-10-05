@@ -35,12 +35,18 @@ export default function HomePage({ navigate }) {
               </div>
 
               <h1 className="pm-hero-title">
-                Learn Smarter, Score Higher With <span className="highlight">Padhai Mantra</span>
+                Learn Smarter <br />
+                Score Higher <br />
+                With <span className="highlight">Padhai Mantra</span>
               </h1>
 
               <p className="pm-hero-subtitle">
                 Build strong concepts for SEE Class 10 and prepare confidently for Class 11 & 12 with Padhai Mantra Course Programs. Learn from expert teachers, practice with structured mock tests, and boost your performance with smart, exam-focused guidance.
               </p>
+
+              <div style={{ fontSize: '0.875rem', fontWeight: 600, color: 'var(--pm-slate-600)', marginBottom: '10px' }}>
+                Get started today with us!
+              </div>
 
               {/* One Primary CTA + One Secondary CTA */}
               <div className="pm-hero-actions">
@@ -49,7 +55,7 @@ export default function HomePage({ navigate }) {
                   className="pm-btn pm-btn-primary"
                   onClick={() => navigate('courses')}
                 >
-                  <span>Get Started</span>
+                  <span>🚀 Get Started</span>
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M5 12h14" />
                     <path d="m12 5 7 7-7 7" />
@@ -60,7 +66,7 @@ export default function HomePage({ navigate }) {
                   className="pm-btn pm-btn-secondary"
                   onClick={() => navigate('mock-tests')}
                 >
-                  <span>Try a Test</span>
+                  <span>✏️ Try a Test</span>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                     <polygon points="5 3 19 12 5 21 5 3" />
                   </svg>
@@ -194,14 +200,31 @@ export default function HomePage({ navigate }) {
 
       {/* ==========================================================================
            SECTION 3: COMPACT STATISTICS
-           4 across desktop, 2x2 mobile
+           A Platform That Values You First - 4 across desktop, 2x2 mobile
            ========================================================================== */}
       <section className="pm-stats-section" aria-label="Platform Statistics">
         <div className="pm-container">
+          <div className="pm-section-header" style={{ marginBottom: 'var(--sp-6)', textAlign: 'center' }}>
+            <h2 style={{ fontSize: 'clamp(1.75rem, 2.5vw, 2.25rem)' }}>
+              A Platform That Values <span className="highlight">You</span> First
+            </h2>
+            <p style={{ color: 'var(--pm-slate-600)', maxWidth: '640px', margin: '8px auto 0' }}>
+              At Padhai Mantra we not only speak through words, but also with numbers!
+            </p>
+          </div>
+
           <div className="pm-stat-grid">
             {siteData.stats.map((st) => (
-              <div key={st.id} className="pm-stat-card">
-                <div style={{ fontSize: '1.25rem', marginBottom: '4px' }}>{st.icon}</div>
+              <div
+                key={st.id}
+                className="pm-stat-card"
+                style={{
+                  backgroundColor: st.bg,
+                  borderColor: 'rgba(0, 0, 0, 0.06)',
+                  boxShadow: '0 4px 14px rgba(0, 0, 0, 0.04)'
+                }}
+              >
+                <div style={{ fontSize: '1.5rem', marginBottom: '6px' }}>{st.icon}</div>
                 <div className="stat-number">{st.number}</div>
                 <div className="stat-label">{st.label}</div>
               </div>
@@ -304,17 +327,17 @@ export default function HomePage({ navigate }) {
 
           <div className="pm-steps-grid">
             <div className="pm-step-card">
-              <div className="pm-step-number">01</div>
+              <div className="pm-step-num">01</div>
               <h3 className="pm-step-title">Register</h3>
               <p className="pm-step-desc">Quick form to reserve your seat in the next batch.</p>
             </div>
             <div className="pm-step-card">
-              <div className="pm-step-number">02</div>
+              <div className="pm-step-num">02</div>
               <h3 className="pm-step-title">Attend Live</h3>
               <p className="pm-step-desc">Join scheduled live classes with interactive sessions.</p>
             </div>
             <div className="pm-step-card">
-              <div className="pm-step-number">03</div>
+              <div className="pm-step-num">03</div>
               <h3 className="pm-step-title">Practice & Improve</h3>
               <p className="pm-step-desc">Take mock tests and review detailed performance reports.</p>
             </div>
